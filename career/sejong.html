@@ -1,94 +1,100 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sejong University - Syscore Lab. - Joo-Young Roh</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="detail.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sejong University - Syscore Lab. - Joo-Young Roh</title>
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/detail.css">
 </head>
+
 <body>
-    <!-- Back Navigation -->
-    <nav class="detail-nav">
-        <div class="container">
-            <a href="../index.html" class="back-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                <span>Back to Home</span>
+
+  <!-- Back Navigation -->
+  <nav class="detail-nav">
+    <div class="container">
+      <a href="../index.html" class="back-link">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Detail Header -->
+  <header class="detail-header">
+    <div class="container">
+      <div class="detail-header-content">
+        <div class="company-badge">Career</div>
+        <h1 class="company-name">Sejong University - Syscore Lab.</h1>
+        <div class="company-meta">
+          <span class="meta-item">
+            <ion-icon name="calendar-outline"></ion-icon>
+            2022.05 - 2024.06
+          </span>
+          <span class="meta-item role-badge">Research Assistant</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Detail Content -->
+  <main class="detail-content">
+    <div class="container">
+
+      <!-- Lab Info -->
+      <section class="detail-section">
+        <h2 class="detail-section-title">About Lab</h2>
+        <div class="company-info-card">
+          <div class="company-info-content">
+            <h3>System Security & Computer Engineering Research Lab.</h3>
+            <p>Advisor: <a href="http://syscore.sejong.ac.kr/~woongbak/index.html" target="_blank" style="color: var(--blue-crayola); text-decoration: none;"><strong>Prof. Ki-Woong Park</strong></a> (Sejong University, Republic of Korea)</p>
+            <p>Mentor: <a href="https://koreasecurity.github.io/" target="_blank" style="color: var(--blue-crayola); text-decoration: none;"><strong>Dr. Sang-Hoon Choi</strong></a></p>
+            <a href="http://syscore.sejong.ac.kr/" target="_blank" class="company-link">
+              <ion-icon name="open-outline"></ion-icon>
+              http://syscore.sejong.ac.kr/
             </a>
+          </div>
         </div>
-    </nav>
+        <p style="margin-top: 16px; color: var(--light-gray);">Syscore Lab. Lab leader (2023.05 - 2024.02)</p>
+      </section>
 
-    <!-- Detail Header -->
-    <header class="detail-header">
-        <div class="container">
-            <div class="detail-header-content">
-                <div class="company-badge">Career</div>
-                <h1 class="company-name">Sejong University - Syscore Lab.</h1>
-                <div class="company-meta">
-                    <span class="meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        2022.05 - 2024.06
-                    </span>
-                    <span class="meta-item role-badge">Research Assistant</span>
-                </div>
-            </div>
+      <!-- Project -->
+      <section class="detail-section">
+        <h2 class="detail-section-title">Project</h2>
+        <div class="role-list">
+          <div class="role-item">
+            <h3>Threat Intelligence Dataset Artifact Extraction and Archiving Research</h3>
+            <p class="role-subtitle">2023.05 - 2023.11</p>
+            <p class="role-desc">위협정보 데이터셋 대상 아티팩트 추출 및 아카이빙 기술 연구<br><span style="color: var(--light-gray-70);">위탁연구사업 (Project No.2023-xxx)</span></p>
+          </div>
+          <div class="role-item">
+            <h3>Multi-dimensional Collection-Analysis-Response Platform for Proactive Ransomware Incident Response</h3>
+            <p class="role-subtitle">2022.07 - 2024.12</p>
+            <p class="role-desc">랜섬웨어 침해사고 전주기적 능동대응을 위한 다각적 수집-분석-대응 플랫폼 개발<br><span style="color: var(--light-gray-70);">정보통신기획평가원(IITP) 정보통신방송기술 국제공동연구 (Project No.RS-2022-00165794)</span></p>
+          </div>
         </div>
-    </header>
+      </section>
 
-    <!-- Detail Content -->
-    <main class="detail-content">
-        <div class="container">
-            <!-- Company Info -->
-            <section class="detail-section">
-                <h2 class="detail-section-title">About Lab</h2>
-                <div class="company-info-card">
-                    <div class="company-info-content">
-                        <h3>System Security & Computer Engineering Research Lab.</h3>
-                        <p>Advisor: <a href="http://syscore.sejong.ac.kr/~woongbak/index.html" target="_blank" style="color: var(--accent-primary); text-decoration: none;"><strong>Prof. Ki-Woong Park</strong></a> (Sejong University, Republic of Korea)</p>
-                        <p>Mentor: <a href="https://koreasecurity.github.io/" target="_blank" style="color: var(--accent-primary); text-decoration: none;"><strong>Dr. Sang-Hoon Choi</strong></a></p>
-                        <a href="http://syscore.sejong.ac.kr/" target="_blank" class="company-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            http://syscore.sejong.ac.kr/
-                        </a>
-                    </div>
-                </div>
-                <p style="margin-top: 16px; color: var(--text-secondary);">Syscore Lab. Lab leader (2023.05 - 2024.02)</p>
-            </section>
+    </div>
+  </main>
 
-            <!-- Project -->
-            <section class="detail-section">
-                <h2 class="detail-section-title">Project</h2>
-                <div class="project-list">
-                    <div class="project-item">
-                        <span class="project-bullet"></span>
-                        <div>
-                            <strong>2023.05 - 2023.11</strong><br>
-                            "위협정보 데이터셋 대상 아티팩트 추출 및 아카이빙 기술 연구"<br>
-                            <span style="color: var(--text-muted);">위탁연구사업 (Project No.2023-xxx)</span>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <span class="project-bullet"></span>
-                        <div>
-                            <strong>2022.07 - 2024.12</strong><br>
-                            "랜섬웨어 침해사고 전주기적 능동대응을 위한 다각적 수집-분석-대응 플랫폼 개발"<br>
-                            <span style="color: var(--text-muted);">정보통신기획평가원(IITP) 정보통신방송기술 국제공동연구 (Project No.RS-2022-00165794)</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  <!-- Footer -->
+  <footer class="detail-footer">
+    <p>&copy; 2025 Joo-Young Roh. All rights reserved.</p>
+  </footer>
 
-        </div>
-    </main>
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Joo-Young Roh. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
+
 </html>

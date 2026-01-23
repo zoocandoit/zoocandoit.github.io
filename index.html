@@ -1,224 +1,418 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joo-Young Roh | Security Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joo-Young Roh | Security Engineer / Security Manager</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Header / Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="name">Joo-Young Roh</h1>
-                <p class="title">Security Engineer / Manager</p>
 
-                <div class="contact-links">
-                    <a href="mailto:hpjoo718@gmail.com" class="contact-item email-btn" data-tooltip="Want to contact me? Click here!">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        <span>hpjoo718@gmail.com</span>
-                    </a>
-                    <a href="https://github.com/zoocandoit" target="_blank" class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jooyoung-roh" target="_blank" class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" class="contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                        <span>Google Scholar</span>
-                    </a>
-                </div>
+  <!-- #MAIN -->
+  <main>
+
+    <!-- #SIDEBAR -->
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Joo-Young Roh" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Joo-Young Roh">Joo-Young Roh</h1>
+          <p class="title">Security Engineer / Security Manager</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
             </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <!-- Career Section -->
-            <section class="section" id="career">
-                <h2 class="section-title">
-                    <span class="section-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                    </span>
-                    Career
-                </h2>
-                <p class="section-total">총 경력 2Y 3M</p>
-                <div class="timeline">
-                    <a href="career/opsnow.html" class="timeline-item has-detail">
-                        <div class="timeline-date">2025.03 - 2025.12 · 9M</div>
-                        <div class="timeline-content">
-                            <h3>OpsNow</h3>
-                            <p class="role">Security Engineer</p>
-                        </div>
-                        <span class="detail-hint">View Details</span>
-                    </a>
-                    <a href="career/kttelecop.html" class="timeline-item has-detail">
-                        <div class="timeline-date">2024.07 - 2025.03 · 9M</div>
-                        <div class="timeline-content">
-                            <h3>KT telecop</h3>
-                            <p class="role">Security Manager</p>
-                        </div>
-                        <span class="detail-hint">View Details</span>
-                    </a>
-                    <a href="career/sejong.html" class="timeline-item has-detail">
-                        <div class="timeline-date">2022.05 - 2024.06</div>
-                        <div class="timeline-content">
-                            <h3>Sejong University - Syscore Lab.</h3>
-                            <p class="role">Research Assistant</p>
-                        </div>
-                        <span class="detail-hint">View Details</span>
-                    </a>
-                    <a href="career/roltech.html" class="timeline-item has-detail">
-                        <div class="timeline-date">2021.05 - 2022.01 · 9M</div>
-                        <div class="timeline-content">
-                            <h3>Roltech</h3>
-                            <p class="role">Security Engineer</p>
-                        </div>
-                        <span class="detail-hint">View Details</span>
-                    </a>
-                    <div class="timeline-item military">
-                        <div class="timeline-date">2020.02 - 2021.09</div>
-                        <div class="timeline-content">
-                            <h3>R.C.N</h3>
-                            <p class="role">21XX / Army sergeant, honorable discharge</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Education Section -->
-            <section class="section" id="education">
-                <h2 class="section-title">
-                    <span class="section-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                    </span>
-                    Education
-                </h2>
-                <div class="education-grid">
-                    <div class="education-card">
-                        <div class="degree">M.S.</div>
-                        <h3>Information Security</h3>
-                        <p class="school">Sejong University</p>
-                        <p class="period">2022.09 - 2024.08</p>
-                    </div>
-                    <div class="education-card">
-                        <div class="degree">B.S.</div>
-                        <h3>Computer Science</h3>
-                        <p class="school">Kwang Woon University</p>
-                        <p class="period">2016.03 - 2020.02</p>
-                    </div>
-                    <div class="education-card course">
-                        <div class="degree">NCS</div>
-                        <h3>Security Operations & Incident Analysis</h3>
-                        <p class="school">Korea IT</p>
-                        <p class="period">2021.01 - 2021.05</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Two Column Layout -->
-            <div class="two-column">
-                <!-- Certificates Section -->
-                <section class="section" id="certificates">
-                    <h2 class="section-title">
-                        <span class="section-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                        </span>
-                        Certificates
-                    </h2>
-                    <ul class="cert-list simple">
-                        <li>AWS Certified Cloud Practitioner</li>
-                        <li>Engineer Information Processing</li>
-                        <li>Linux Master Level 2</li>
-                        <li>Network Administrator Level 2</li>
-                    </ul>
-                </section>
-
-                <!-- Awards Section -->
-                <section class="section" id="awards">
-                    <h2 class="section-title">
-                        <span class="section-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                        </span>
-                        Awards
-                    </h2>
-                    <ul class="cert-list simple">
-                        <li>ETRI President's Outstanding Paper Award [CISC-W'22] 2022.11.26</li>
-                    </ul>
-                </section>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:hpjoo718@gmail.com" class="contact-link">hpjoo718@gmail.com</a>
             </div>
+          </li>
 
-            <!-- Publications Section -->
-            <section class="section" id="publications">
-                <h2 class="section-title">
-                    <span class="section-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                    </span>
-                    Publications
-                </h2>
-                <div class="publication-grid">
-                    <div class="publication-card international">
-                        <span class="pub-badge">SCI</span>
-                        <h3>OOSP: Opportunistic Optimization Scheme for Pod Deployment Enhanced with Multilayered Sensing</h3>
-                        <p class="authors"><strong>Joo-Young Roh*</strong>, Sang-hoon Choi, Ki-Woong Park†</p>
-                        <p class="venue">Sensors, Vol. 24, Issue 19, Sep 2024</p>
-                        <p class="impact">Impact Factor: 3.4</p>
-                    </div>
-                    <div class="publication-card international">
-                        <span class="pub-badge conf">International Conference</span>
-                        <h3>CO-TRIS: Container Orchestration - Transforming using Resource Inspection System</h3>
-                        <p class="authors"><strong>Joo-Young Roh*</strong>, Sang-hoon Choi, Ki-Woong Park†</p>
-                        <p class="venue">IEEE AIKE 2023, pp. 121-124</p>
-                    </div>
-                    <div class="publication-card domestic">
-                        <span class="pub-badge domestic">KCI</span>
-                        <h3>IaC-VIMF: IaC-Based Virtual Infrastructure Mutagenesis Framework for Cyber Defense Training</h3>
-                        <p class="authors"><strong>노주영*</strong>, 이세한, 박기웅†</p>
-                        <p class="venue">Journal of KIISC, vol. 33, no. 3, 2023</p>
-                    </div>
-                </div>
-                <div class="more-publications">
-                    <p>+3 more conference papers</p>
-                </div>
-            </section>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Seoul, Republic of Korea</address>
+            </div>
+          </li>
 
-            <!-- Patents & SW Section -->
-            <section class="section" id="patents">
-                <h2 class="section-title">
-                    <span class="section-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    </span>
-                    Patents & S/W
-                </h2>
-                <div class="patent-grid">
-                    <div class="patent-card">
-                        <span class="patent-badge">Patent</span>
-                        <h3>조직 맞춤형 사이버 공방 훈련을 위한 가상 인프라 변이 생성 프레임워크</h3>
-                        <p class="patent-info">출원번호: 10-2022-0162201 · 2022.11.29</p>
-                    </div>
-                    <div class="patent-card">
-                        <span class="patent-badge sw">S/W</span>
-                        <h3>대규모 언어모델(LLM)을 활용한 모바일 앱 설치파일(APK) 분류 시스템</h3>
-                        <p class="patent-info">등록번호: C-2023-063688 · 2023.12.28</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
+        </ul>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Joo-Young Roh. All rights reserved.</p>
-        </div>
-    </footer>
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://github.com/zoocandoit" target="_blank" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/jooyoung-roh" target="_blank" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" class="social-link">
+              <ion-icon name="school-outline"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+    <!-- #main-content -->
+    <div class="main-content">
+
+      <!-- #NAVBAR -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>About</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Publications</button>
+          </li>
+        </ul>
+      </nav>
+
+
+      <!-- #ABOUT -->
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I am a Security Engineer with a Master's degree in Information Security from Sejong University.
+            My expertise spans cloud security, enterprise security management, and container orchestration security research.
+          </p>
+          <p>
+            I have experience in ISMS certification audits, security operations (SecOps), and implementing security
+            solutions across various enterprise environments. My research interests include Cloud [computing, security], Optimization [FinOps, SecOps]
+            and AI/ML applications in cybersecurity.
+          </p>
+        </section>
+
+
+        <!-- Certificates -->
+        <section class="certificates">
+
+          <h3 class="h3 certificates-title">Certificates</h3>
+
+          <ul class="certificates-list">
+            <li class="certificates-item">AWS Certified Cloud Practitioner</li>
+            <li class="certificates-item">Engineer Information Processing</li>
+            <li class="certificates-item">Linux Master Level 2</li>
+            <li class="certificates-item">Network Administrator Level 2</li>
+          </ul>
+
+        </section>
+
+
+        <!-- Awards -->
+        <section class="awards">
+
+          <h3 class="h3 awards-title">Awards</h3>
+
+          <ul class="awards-list">
+            <li class="awards-item">
+              <h4 class="h4 awards-item-title">ETRI President's Outstanding Paper Award</h4>
+              <p class="awards-item-text">Conference on Information Security and Cryptography - Winter 2022 (CISC-W'22)</p>
+              <span class="awards-item-date">2022.11.26</span>
+            </li>
+          </ul>
+
+        </section>
+
+      </article>
+
+
+      <!-- #RESUME -->
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <!-- Education -->
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">M.S. in Information Security</h4>
+              <span>2022.09 - 2024.08</span>
+              <p class="timeline-text">
+                Sejong University, Seoul, Republic of Korea
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">B.S. in Computer Science</h4>
+              <span>2016.03 - 2020.02</span>
+              <p class="timeline-text">
+                Kwang Woon University, Seoul, Republic of Korea
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">NCS - Security Operations & Incident Analysis</h4>
+              <span>2021.01 - 2021.05</span>
+              <p class="timeline-text">
+                Korea IT Training Center
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <!-- Experience -->
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Experience</h3>
+            <span class="total-experience">Total: 2Y 3M</span>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item clickable" onclick="location.href='career/opsnow.html'">
+              <h4 class="h4 timeline-item-title">Security Engineer</h4>
+              <span>2025.03 - 2025.12 (9M)</span>
+              <p class="timeline-text">
+                OpsNow - Cloud security operations and SecOps implementation
+              </p>
+              <div class="timeline-detail-hint">View Details</div>
+            </li>
+
+            <li class="timeline-item clickable" onclick="location.href='career/kttelecop.html'">
+              <h4 class="h4 timeline-item-title">Security Manager</h4>
+              <span>2024.07 - 2025.03 (9M)</span>
+              <p class="timeline-text">
+                KT telecop - ISMS certification audit and enterprise security management
+              </p>
+              <div class="timeline-detail-hint">View Details</div>
+            </li>
+
+            <li class="timeline-item clickable" onclick="location.href='career/sejong.html'">
+              <h4 class="h4 timeline-item-title">Research Assistant</h4>
+              <span>2022.05 - 2024.06</span>
+              <p class="timeline-text">
+                Sejong University - Syscore Lab. Container security research
+              </p>
+              <div class="timeline-detail-hint">View Details</div>
+            </li>
+
+            <li class="timeline-item clickable" onclick="location.href='career/roltech.html'">
+              <h4 class="h4 timeline-item-title">Security Engineer</h4>
+              <span>2021.05 - 2022.01 (9M)</span>
+              <p class="timeline-text">
+                Roltech - Network security engineering
+              </p>
+              <div class="timeline-detail-hint">View Details</div>
+            </li>
+
+            <li class="timeline-item military">
+              <h4 class="h4 timeline-item-title">Army Sergeant (Honorable Discharge)</h4>
+              <span>2020.02 - 2021.09</span>
+              <p class="timeline-text">
+                Republic of Korea Army (R.O.K.A) - 21XX
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+      </article>
+
+
+      <!-- #PUBLICATIONS -->
+      <article class="publications" data-page="publications">
+
+        <header>
+          <h2 class="h2 article-title">Publications</h2>
+        </header>
+
+        <!-- Journal Papers -->
+        <section class="projects">
+
+          <h3 class="h3 projects-title">Journal Papers</h3>
+
+          <ul class="project-list">
+
+            <li class="project-item active">
+              <div class="project-content">
+                <span class="project-badge sci">SCI</span>
+                <h3 class="project-title">OOSP: Opportunistic Optimization Scheme for Pod Deployment Enhanced with Multilayered Sensing</h3>
+                <p class="project-authors"><strong>Joo-Young Roh*</strong>, Sang-hoon Choi, Ki-Woong Park</p>
+                <p class="project-venue">Sensors, Vol. 24, Issue 19, Sep 2024</p>
+                <p class="project-impact">Impact Factor: 3.4</p>
+              </div>
+            </li>
+
+            <li class="project-item active">
+              <div class="project-content">
+                <span class="project-badge kci">KCI</span>
+                <h3 class="project-title">IaC-VIMF: IaC-Based Virtual Infrastructure Mutagenesis Framework for Cyber Defense Training</h3>
+                <p class="project-authors"><strong>Joo-Young Roh*</strong>, Se-Han Lee, Ki-Woong Park</p>
+                <p class="project-venue">Journal of KIISC, vol. 33, no. 3, 2023</p>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <!-- Conference Papers -->
+        <section class="projects">
+
+          <h3 class="h3 projects-title">Conference Papers</h3>
+
+          <ul class="project-list">
+
+            <li class="project-item active">
+              <div class="project-content">
+                <span class="project-badge conf">International</span>
+                <h3 class="project-title">CO-TRIS: Container Orchestration - Transforming using Resource Inspection System</h3>
+                <p class="project-authors"><strong>Joo-Young Roh*</strong>, Sang-hoon Choi, Ki-Woong Park</p>
+                <p class="project-venue">IEEE AIKE 2023, pp. 121-124</p>
+              </div>
+            </li>
+
+            <li class="project-item active">
+              <div class="project-content">
+                <span class="project-badge domestic">Domestic</span>
+                <h3 class="project-title">Quick-Filter: 대규모 언어 모델을 활용한 악성 APK 필터링 프레임워크</h3>
+                <p class="project-authors"><strong>노주영*</strong>, 박지훈*, 최상훈, 박기웅†</p>
+                <p class="project-venue">2023년도 한국정보보호학회 동계학술대회, 2023.12.02</p>
+              </div>
+            </li>
+
+            <li class="project-item active">
+              <div class="project-content">
+                <span class="project-badge domestic">Domestic</span>
+                <h3 class="project-title">이상징후 탐지를 위한 거시적 관점에서의 데이터 시각화 프레임워크</h3>
+                <p class="project-authors">이하늘*, 김지혜, 우승찬, 임우협, 신규섭, 장서현, 최상훈, <strong>노주영</strong>, 박기웅†</p>
+                <p class="project-venue">2023년도 한국정보보호학회 하계학술대회, 2023.06.23</p>
+              </div>
+            </li>
+
+            <li class="project-item active">
+              <div class="project-content">
+                <span class="project-badge domestic">Domestic</span>
+                <h3 class="project-title">조직 맞춤형 사이버 공방 훈련을 위한 가상 인프라 변이 생성 프레임워크</h3>
+                <p class="project-authors"><strong>노주영*</strong>, 이세한, 박기웅†</p>
+                <p class="project-venue">2022년도 한국정보보호학회 동계학술대회, 2022.11.26</p>
+                <p class="project-impact">Best Paper Award</p>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <!-- Patents -->
+        <section class="projects">
+
+          <h3 class="h3 projects-title">Patents & S/W Registration</h3>
+
+          <ul class="project-list">
+
+            <li class="project-item active">
+              <div class="project-content">
+                <span class="project-badge patent">Patent</span>
+                <h3 class="project-title">조직 맞춤형 사이버 공방 훈련을 위한 가상 인프라 변이 생성 프레임워크</h3>
+                <p class="project-authors">박기웅, <strong>노주영</strong>, 이세한</p>
+                <p class="project-venue">출원번호: 10-2022-0162201, 출원일: 2022.11.29</p>
+              </div>
+            </li>
+
+            <li class="project-item active">
+              <div class="project-content">
+                <span class="project-badge sw">S/W</span>
+                <h3 class="project-title">대규모 언어모델(LLM)을 활용한 모바일 앱 설치파일(APK) 분류 시스템</h3>
+                <p class="project-authors">박기웅, 최상훈, <strong>노주영</strong>, 박지훈</p>
+                <p class="project-venue">등록번호: C-2023-063688, 등록일: 2023.12.28</p>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+  <!-- custom js link -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>
