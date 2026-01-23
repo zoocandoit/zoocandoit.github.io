@@ -194,6 +194,14 @@ body {
     color: var(--text-primary);
 }
 
+.section-total {
+    margin-top: -12px;
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
 .section-icon {
     display: flex;
     align-items: center;
