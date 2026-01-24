@@ -2,23 +2,38 @@
   #DETAIL PAGE STYLES
 \*-----------------------------------*/
 
+/* Reset all styles for detail page */
+body.detail-page {
+  background: var(--smoky-black);
+}
+
+body.detail-page main {
+  margin: 0 !important;
+  min-width: auto !important;
+}
+
+/* Unified container - single source of truth */
+body.detail-page .container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
 /*-----------------------------------*\
   #NAVIGATION
 \*-----------------------------------*/
 
 .detail-nav {
   background: var(--eerie-black-2);
-  padding: 16px 24px;
+  padding: 16px 0;
   border-bottom: 1px solid var(--jet);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.detail-nav .container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
 
 .back-link {
   display: inline-flex;
@@ -46,17 +61,13 @@
 
 .detail-header {
   background: var(--eerie-black-2);
-  padding: 48px 24px;
+  padding: 48px 0;
   border-bottom: 1px solid var(--jet);
 }
 
-.detail-header .container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
 
 .detail-header-content {
-  max-width: 800px;
+  max-width: 100%;
 }
 
 .company-badge {
@@ -112,14 +123,10 @@
 \*-----------------------------------*/
 
 .detail-content {
-  padding: 48px 24px;
+  padding: 48px 0;
   background: var(--smoky-black);
 }
 
-.detail-content .container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
 
 .detail-section {
   margin-bottom: 48px;
@@ -372,7 +379,7 @@
   }
 
   .detail-header {
-    padding: 60px 24px;
+    padding: 60px 0;
   }
 
 }
@@ -384,11 +391,15 @@
   }
 
   .detail-header {
-    padding: 32px 16px;
+    padding: 32px 0;
   }
 
   .detail-content {
-    padding: 32px 16px;
+    padding: 32px 0;
+  }
+
+  body.detail-page .container {
+    padding: 0 16px;
   }
 
   .company-meta {
