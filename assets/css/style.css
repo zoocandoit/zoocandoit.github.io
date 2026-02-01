@@ -785,6 +785,14 @@ main {
   display: block;
 }
 
+.timeline-item.clickable::after {
+  left: -23px;
+}
+
+.timeline-item.clickable:not(:last-child)::before {
+  left: -20px;
+}
+
 
 /**
  * skills
@@ -1125,6 +1133,14 @@ main {
     height: 8px;
     width: 8px;
     left: -43px;
+  }
+
+  .timeline-item.clickable::after {
+    left: -33px;
+  }
+
+  .timeline-item.clickable:not(:last-child)::before {
+    left: -30px;
   }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
