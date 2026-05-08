@@ -10,12 +10,18 @@ body.detail-page {
 body.detail-page main {
   margin: 0 !important;
   min-width: auto !important;
+  max-width: none !important;
+  width: 100% !important;
+  display: block !important;
+  justify-content: initial !important;
+  align-items: initial !important;
+  gap: 0 !important;
 }
 
 /* Unified container - single source of truth */
 body.detail-page .container {
   width: 100%;
-  max-width: 900px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px;
   box-sizing: border-box;

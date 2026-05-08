@@ -70,6 +70,38 @@
       root.style.setProperty("--cursor-x", `${x}%`);
       root.style.setProperty("--cursor-y", `${y}%`);
     });
+
+    document.querySelectorAll(".profile-banner").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+        event.preventDefault();
+
+        const rect = link.getBoundingClientRect();
+        const x = `${Math.round(rect.left + rect.width / 2)}px`;
+        const y = `${Math.round(rect.top + rect.height / 2)}px`;
+
+        root.style.setProperty("--transition-x", x);
+        root.style.setProperty("--transition-y", y);
+        sessionStorage.setItem("profileTransition", "in");
+
+        link.classList.add("is-transitioning");
+        if (link.classList.contains("conductor-banner")) {
+          document.body.classList.add("page-transition-light");
+        }
+        document.body.classList.add("page-transition-out");
+
+        window.setTimeout(() => {
+          window.location.href = link.href;
+        }, 430);
+      });
+    });
+
+    if (sessionStorage.getItem("profileTransition") === "home") {
+      sessionStorage.removeItem("profileTransition");
+      document.body.classList.add("page-transition-in");
+      window.setTimeout(() => document.body.classList.remove("page-transition-in"), 650);
+    }
   </script>
 </body>
 

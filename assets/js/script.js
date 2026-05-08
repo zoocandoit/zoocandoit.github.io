@@ -38,6 +38,37 @@ const calcTotalExperience = function () {
 
 calcTotalExperience();
 
+// page transition from/to the profile hub
+if (sessionStorage.getItem("profileTransition") === "in") {
+  sessionStorage.removeItem("profileTransition");
+  document.body.classList.add("page-transition-in");
+  window.setTimeout(function () {
+    document.body.classList.remove("page-transition-in");
+  }, 650);
+}
+
+const profileHomeLinks = document.querySelectorAll(".floating-home-link");
+
+profileHomeLinks.forEach(function (link) {
+  link.addEventListener("click", function (event) {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    event.preventDefault();
+
+    const rect = link.getBoundingClientRect();
+    document.documentElement.style.setProperty("--transition-x", Math.round(rect.left + rect.width / 2) + "px");
+    document.documentElement.style.setProperty("--transition-y", Math.round(rect.top + rect.height / 2) + "px");
+    sessionStorage.setItem("profileTransition", "home");
+
+    link.classList.add("is-transitioning");
+    document.body.classList.add("page-transition-out");
+
+    window.setTimeout(function () {
+      window.location.href = link.href;
+    }, 430);
+  });
+});
+
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 

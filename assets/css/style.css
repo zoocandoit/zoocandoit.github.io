@@ -146,6 +146,115 @@ html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at var(--transition-x, 50%) var(--transition-y, 50%), hsla(210, 100%, 68%, 0.32), transparent 10rem),
+    hsla(0, 0%, 3%, 0.92);
+  transform: scale(0.18);
+  transition:
+    opacity 0.38s ease,
+    transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+body.profile-hub::before {
+  background:
+    radial-gradient(circle at var(--transition-x, 50%) var(--transition-y, 50%), hsla(42, 94%, 74%, 0.38), transparent 10rem),
+    hsla(0, 0%, 3%, 0.9);
+}
+
+body.profile-hub.page-transition-light::before {
+  background:
+    radial-gradient(circle at var(--transition-x, 50%) var(--transition-y, 50%), hsla(42, 94%, 74%, 0.74), transparent 14rem),
+    radial-gradient(circle at var(--transition-x, 50%) var(--transition-y, 50%), hsl(42, 72%, 94%), transparent 34rem),
+    hsla(42, 64%, 95%, 0.94);
+}
+
+body.page-transition-out::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+body.page-transition-out main,
+body.page-transition-out .floating-home-link {
+  animation: pageSuckOut 0.48s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  transform-origin: var(--transition-x, 50%) var(--transition-y, 50%);
+}
+
+body.page-transition-in main,
+body.page-transition-in .floating-home-link {
+  animation: pageBloomIn 0.58s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.profile-banner.is-transitioning,
+.floating-home-link.is-transitioning {
+  animation: triggerSuck 0.42s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  transform-origin: center;
+}
+
+@keyframes pageSuckOut {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.84) translateY(10px);
+    filter: blur(8px);
+  }
+}
+
+@keyframes pageBloomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(14px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes triggerSuck {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body.page-transition-out main,
+  body.page-transition-out .floating-home-link,
+  body.page-transition-in main,
+  body.page-transition-in .floating-home-link,
+  .profile-banner.is-transitioning,
+  .floating-home-link.is-transitioning {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body:not(.profile-hub):not(.conductor-page):not(.detail-page) {
+  background:
+    radial-gradient(circle at 16% 14%, hsla(210, 100%, 60%, 0.24), transparent 30rem),
+    radial-gradient(circle at 92% 18%, hsla(38, 94%, 74%, 0.1), transparent 28rem),
+    linear-gradient(135deg, hsl(220, 22%, 10%), hsl(0, 0%, 7%) 50%, hsl(214, 24%, 18%) 100%);
+  background-attachment: fixed;
+}
+
 
 /*-----------------------------------*\
   #PROFILE HUB
@@ -362,12 +471,13 @@ body.profile-hub .hub-shell {
 
 .sidebar,
 article {
-  background: var(--eerie-black-2);
-  border: 1px solid var(--jet);
+  background: hsla(240, 2%, 12%, 0.84);
+  border: 1px solid hsla(0, 0%, 100%, 0.12);
   border-radius: 20px;
   padding: 15px;
-  box-shadow: var(--shadow-1);
+  box-shadow: 0 24px 70px hsla(0, 0%, 0%, 0.22);
   z-index: 1;
+  backdrop-filter: blur(16px);
 }
 
 .separator {
@@ -482,7 +592,9 @@ article.active {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
+  background:
+    linear-gradient(135deg, hsla(210, 100%, 60%, 0.08), hsla(240, 2%, 13%, 0.96)),
+    var(--bg-gradient-jet);
   border-radius: inherit;
   z-index: -1;
 }
@@ -521,8 +633,11 @@ main {
 }
 
 .avatar-box {
-  background: var(--bg-gradient-onyx);
+  background:
+    linear-gradient(135deg, hsla(0, 0%, 100%, 0.08), hsla(210, 100%, 60%, 0.18)),
+    var(--bg-gradient-onyx);
   border-radius: 20px;
+  border: 1px solid hsla(210, 100%, 60%, 0.18);
 }
 
 .avatar-box img {
@@ -539,7 +654,8 @@ main {
 
 .info-content .title {
   color: var(--white-1);
-  background: var(--onyx);
+  background: hsla(210, 100%, 60%, 0.16);
+  border: 1px solid hsla(210, 100%, 60%, 0.34);
   font-size: var(--fs-8);
   font-weight: var(--fw-300);
   width: max-content;
@@ -619,8 +735,8 @@ body:not(.conductor-page) .contact-title {
   width: max-content;
   padding: 3px 8px;
   border-radius: 999px;
-  background: var(--blue-crayola);
-  color: var(--smoky-black);
+  background: hsl(216, 100%, 68%);
+  color: hsl(220, 22%, 10%);
   font-size: 10px;
   font-weight: var(--fw-600);
   letter-spacing: 0;
@@ -890,7 +1006,9 @@ body:not(.conductor-page) .contact-title {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
+  background:
+    linear-gradient(135deg, hsla(210, 100%, 60%, 0.08), hsla(240, 2%, 13%, 0.96)),
+    var(--bg-gradient-jet);
   border-radius: inherit;
   z-index: -1;
 }
@@ -1162,7 +1280,9 @@ body:not(.conductor-page) .contact-title {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
+  background:
+    linear-gradient(135deg, hsla(210, 100%, 60%, 0.08), hsla(240, 2%, 13%, 0.96)),
+    var(--bg-gradient-jet);
   border-radius: inherit;
   z-index: -1;
 }
@@ -1910,7 +2030,7 @@ body.conductor-page .project-badge {
 }
 
 body:not(.conductor-page) .profile-home-link {
-  color: var(--blue-crayola);
+  color: hsl(216, 100%, 68%);
 }
 
 body:not(.conductor-page) .profile-home-link:hover,
@@ -1927,9 +2047,9 @@ body:not(.conductor-page) .profile-home-link:focus {
   align-items: center;
   gap: 6px;
   padding: 6px 10px;
-  border: 1px solid hsla(0, 0%, 100%, 0.12);
+  border: 1px solid hsla(216, 100%, 68%, 0.24);
   border-radius: 999px;
-  background: hsla(240, 2%, 12%, 0.86);
+  background: hsla(240, 2%, 12%, 0.78);
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow-1);
   font-size: 12px;
