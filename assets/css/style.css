@@ -1367,8 +1367,6 @@ body:not(.conductor-page) .contact-title {
   outline-offset: 3px;
 }
 
-.news-badge { margin-right: 8px; }
-
 .news-date {
   display: inline-block;
   color: var(--light-gray-70);
