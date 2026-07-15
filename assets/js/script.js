@@ -141,6 +141,15 @@ copyEmailButtons.forEach(function (button) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
+document.querySelectorAll(".timeline-item.clickable[role='link']").forEach((item) => {
+  item.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+
+    event.preventDefault();
+    item.click();
+  });
+});
+
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {

@@ -241,7 +241,14 @@ body.page-transition-in .floating-home-link {
   body.page-transition-in main,
   body.page-transition-in .floating-home-link,
   .profile-banner.is-transitioning,
-  .floating-home-link.is-transitioning {
+  .floating-home-link.is-transitioning,
+  .hub-welcome,
+  .profile-banner,
+  article.active,
+  .avatar-box img,
+  .timeline-item.clickable,
+  .news-card,
+  .navbar-link::after {
     animation: none !important;
     transition: none !important;
   }
@@ -286,6 +293,7 @@ body.profile-hub .hub-shell {
 .hub-welcome {
   margin-bottom: 14px;
   text-align: center;
+  animation: hub-content-in 0.55s ease backwards;
 }
 
 .hub-welcome p {
@@ -368,6 +376,22 @@ body.profile-hub .hub-shell {
   justify-content: flex-start;
   gap: 16px;
   transition: transform var(--transition-1), border-color var(--transition-1);
+  animation: hub-content-in 0.55s ease backwards;
+}
+
+.profile-banner:nth-child(1) { animation-delay: 80ms; }
+.profile-banner:nth-child(2) { animation-delay: 150ms; }
+
+@keyframes hub-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .security-banner {
@@ -517,12 +541,19 @@ article { display: none; }
 
 article.active {
   display: block;
-  animation: fade 0.5s ease backwards;
+  animation: content-in 0.35s ease backwards;
 }
 
-@keyframes fade {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+@keyframes content-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .h2,
@@ -642,6 +673,12 @@ main {
 
 .avatar-box img {
   border-radius: 20px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+body:not(.profile-hub):not(.conductor-page):not(.detail-page) .avatar-box:hover img {
+  transform: scale(1.025);
+  filter: brightness(1.05);
 }
 
 .info-content .name {
@@ -868,16 +905,36 @@ body:not(.conductor-page) .contact-title {
 }
 
 .navbar-link {
+  position: relative;
   color: var(--light-gray);
   font-size: var(--fs-8);
   padding: 20px 7px;
   transition: color var(--transition-1);
 }
 
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 11px;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--blue-crayola);
+  opacity: 0;
+  transform: translateX(-50%) scaleX(0);
+  transition: opacity var(--transition-1), transform var(--transition-1);
+}
+
 .navbar-link:hover,
 .navbar-link:focus { color: var(--light-gray-70); }
 
 .navbar-link.active { color: var(--blue-crayola); }
+
+.navbar-link.active::after {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+}
 
 
 /*-----------------------------------*\
@@ -1174,11 +1231,19 @@ body:not(.conductor-page) .contact-title {
   padding: 10px;
   margin-left: -10px;
   border-radius: 10px;
-  transition: background var(--transition-1);
+  transition: background var(--transition-1), transform var(--transition-1), box-shadow var(--transition-1);
 }
 
-.timeline-item.clickable:hover {
+.timeline-item.clickable:hover,
+.timeline-item.clickable:focus-visible {
   background: var(--onyx);
+  transform: translateX(3px);
+  box-shadow: inset 3px 0 0 var(--blue-crayola);
+}
+
+.timeline-item.clickable:focus-visible {
+  outline: 2px solid var(--blue-crayola);
+  outline-offset: 3px;
 }
 
 .timeline-detail-hint {
@@ -1195,7 +1260,8 @@ body:not(.conductor-page) .contact-title {
   border-radius: 4px;
 }
 
-.timeline-item.clickable:hover .timeline-detail-hint {
+.timeline-item.clickable:hover .timeline-detail-hint,
+.timeline-item.clickable:focus-visible .timeline-detail-hint {
   display: block;
 }
 
@@ -1974,6 +2040,10 @@ body.conductor-page .navbar-link:focus {
   color: hsl(34, 88%, 34%);
 }
 
+body.conductor-page .navbar-link::after {
+  background: hsl(34, 88%, 44%);
+}
+
 body.conductor-page .article-title::after,
 body.conductor-page .certificates-item::before,
 body.conductor-page .timeline-item::after {
@@ -2038,6 +2108,11 @@ body.conductor-page .project-badge {
   object-position: 70% 34%;
   filter: saturate(0.9) sepia(0.08) brightness(1.08);
   transform: scale(1.22);
+}
+
+.conductor-avatar:hover img {
+  filter: saturate(0.96) sepia(0.06) brightness(1.11);
+  transform: scale(1.25);
 }
 
 .conductor-avatar::after {
