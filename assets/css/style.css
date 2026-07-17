@@ -2684,10 +2684,22 @@ body.profile-hub .hub-shell {
 .profile-banner:focus-visible,
 .conductor-banner:hover,
 .conductor-banner:focus-visible {
-  border-color: currentColor;
-  background-color: transparent;
   transform: translateY(-6px);
   box-shadow: 0 38px 100px hsla(0, 0%, 0%, 0.38);
+}
+
+.security-banner:hover,
+.security-banner:focus-visible {
+  border-color: hsla(210, 100%, 72%, 0.7);
+  background: hsla(216, 28%, 14%, 0.92);
+}
+
+.conductor-banner:hover,
+.conductor-banner:focus-visible {
+  border-color: hsla(42, 86%, 72%, 0.68);
+  background:
+    linear-gradient(135deg, hsla(42, 48%, 27%, 0.94), hsla(34, 34%, 16%, 0.96));
+  color: hsl(42, 62%, 95%);
 }
 
 .profile-banner:hover::after,
