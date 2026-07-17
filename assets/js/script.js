@@ -202,6 +202,7 @@ navigationLinks.forEach(function (link, index) {
   link.setAttribute("role", "tab");
   link.setAttribute("aria-controls", panelId);
   link.setAttribute("aria-selected", link.classList.contains("active") ? "true" : "false");
+  if (link.classList.contains("active")) link.setAttribute("aria-current", "page");
   page.id = panelId;
   page.setAttribute("role", "tabpanel");
   page.setAttribute("aria-labelledby", tabId);
@@ -255,6 +256,11 @@ for (let i = 0; i < navigationLinks.length; i++) {
       navigationLinks[j].classList.toggle("active", navigationLinks[j] === this);
       navigationLinks[j].setAttribute("aria-selected", navigationLinks[j] === this ? "true" : "false");
       navigationLinks[j].tabIndex = navigationLinks[j] === this ? 0 : -1;
+      if (navigationLinks[j] === this) {
+        navigationLinks[j].setAttribute("aria-current", "page");
+      } else {
+        navigationLinks[j].removeAttribute("aria-current");
+      }
     }
 
     window.history.replaceState(null, "", "#" + targetPage);
