@@ -1,5 +1,48 @@
 'use strict';
 
+// Shared UI layer: both profiles use the same interaction details while
+// keeping their own visual theme through CSS custom properties.
+document.documentElement.classList.add("js");
+
+const uiProgress = document.createElement("div");
+uiProgress.className = "scroll-progress";
+uiProgress.setAttribute("aria-hidden", "true");
+document.body.prepend(uiProgress);
+
+const updateScrollProgress = function () {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+  document.documentElement.style.setProperty("--scroll-progress", Math.min(1, Math.max(0, progress)));
+};
+
+updateScrollProgress();
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("resize", updateScrollProgress);
+
+const finePointer = window.matchMedia("(pointer: fine)");
+if (finePointer.matches) {
+  window.addEventListener("pointermove", function (event) {
+    document.documentElement.style.setProperty("--pointer-x", event.clientX + "px");
+    document.documentElement.style.setProperty("--pointer-y", event.clientY + "px");
+  }, { passive: true });
+}
+
+const toast = document.createElement("div");
+toast.className = "ui-toast";
+toast.setAttribute("role", "status");
+toast.setAttribute("aria-live", "polite");
+document.body.appendChild(toast);
+
+let toastTimer;
+const showToast = function (message) {
+  window.clearTimeout(toastTimer);
+  toast.textContent = message;
+  toast.classList.add("is-visible");
+  toastTimer = window.setTimeout(function () {
+    toast.classList.remove("is-visible");
+  }, 1800);
+};
+
 // Calculate total experience from data-start / data-end attributes
 const calcTotalExperience = function () {
   const el = document.getElementById("total-experience");
@@ -78,7 +121,15 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
 if (sidebarBtn) {
-  sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+  sidebarBtn.setAttribute("aria-expanded", "false");
+  sidebarBtn.setAttribute("aria-controls", "profile-contacts");
+  const sidebarMore = sidebar.querySelector(".sidebar-info_more");
+  if (sidebarMore) sidebarMore.id = "profile-contacts";
+
+  sidebarBtn.addEventListener("click", function () {
+    elementToggleFunc(sidebar);
+    sidebarBtn.setAttribute("aria-expanded", sidebar.classList.contains("active") ? "true" : "false");
+  });
 }
 
 // copy email buttons
@@ -124,7 +175,7 @@ copyEmailButtons.forEach(function (button) {
       button.classList.add("is-copied");
       button.setAttribute("aria-label", "Email copied");
       button.title = "Copied";
-      alert("Copied to clipboard.");
+      showToast("Email copied to clipboard");
 
       window.setTimeout(function () {
         button.classList.remove("is-copied");
@@ -140,6 +191,40 @@ copyEmailButtons.forEach(function (button) {
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
+
+navigationLinks.forEach(function (link, index) {
+  const page = pages[index];
+  if (!page) return;
+
+  const tabId = "profile-tab-" + page.dataset.page;
+  const panelId = "profile-panel-" + page.dataset.page;
+  link.id = tabId;
+  link.setAttribute("role", "tab");
+  link.setAttribute("aria-controls", panelId);
+  link.setAttribute("aria-selected", link.classList.contains("active") ? "true" : "false");
+  page.id = panelId;
+  page.setAttribute("role", "tabpanel");
+  page.setAttribute("aria-labelledby", tabId);
+});
+
+document.querySelectorAll(".navbar-list").forEach(function (list) {
+  list.setAttribute("role", "tablist");
+  list.setAttribute("aria-label", "Profile sections");
+});
+
+const preparePageMotion = function (page) {
+  if (!page) return;
+
+  const items = page.querySelectorAll(
+    ".about-text > p, .certificates-item, .awards-item, .timeline-item, .project-item"
+  );
+  items.forEach(function (item, index) {
+    item.classList.add("motion-item");
+    item.style.setProperty("--motion-order", Math.min(index, 10));
+  });
+};
+
+pages.forEach(preparePageMotion);
 
 document.querySelectorAll(".timeline-item.clickable[role='link']").forEach((item) => {
   item.addEventListener("keydown", (event) => {
@@ -158,15 +243,43 @@ for (let i = 0; i < navigationLinks.length; i++) {
     for (let j = 0; j < pages.length; j++) {
       if (targetPage === pages[j].dataset.page) {
         pages[j].classList.add("active");
+        pages[j].removeAttribute("hidden");
         window.scrollTo(0, 0);
       } else {
         pages[j].classList.remove("active");
+        pages[j].setAttribute("hidden", "");
       }
     }
 
     for (let j = 0; j < navigationLinks.length; j++) {
       navigationLinks[j].classList.toggle("active", navigationLinks[j] === this);
+      navigationLinks[j].setAttribute("aria-selected", navigationLinks[j] === this ? "true" : "false");
+      navigationLinks[j].tabIndex = navigationLinks[j] === this ? 0 : -1;
     }
 
+    updateScrollProgress();
   });
 }
+
+pages.forEach(function (page) {
+  if (!page.classList.contains("active")) page.setAttribute("hidden", "");
+});
+
+navigationLinks.forEach(function (link) {
+  link.tabIndex = link.classList.contains("active") ? 0 : -1;
+});
+
+document.querySelectorAll(".navbar-list").forEach(function (list) {
+  list.addEventListener("keydown", function (event) {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+
+    const tabs = Array.from(list.querySelectorAll("[data-nav-link]"));
+    const current = tabs.indexOf(document.activeElement);
+    if (current < 0) return;
+
+    event.preventDefault();
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    tabs[(current + direction + tabs.length) % tabs.length].click();
+    tabs[(current + direction + tabs.length) % tabs.length].focus();
+  });
+});

@@ -45,14 +45,24 @@
 </head>
 
 <body class="profile-hub">
+  <div class="hub-atmosphere" aria-hidden="true">
+    <span class="hub-orb hub-orb-blue"></span>
+    <span class="hub-orb hub-orb-gold"></span>
+    <span class="hub-noise"></span>
+  </div>
+
   <main class="hub-shell">
     <section class="hub-welcome" aria-labelledby="welcome-title">
-      <p id="welcome-title">Official Profile</p>
-      <h1>노주영 <span lang="en">Jooyoung Roh</span></h1>
+      <div class="hub-title-group">
+        <p id="welcome-title"><span></span> Official Profile</p>
+        <h1>노주영 <span lang="en">Jooyoung Roh</span></h1>
+      </div>
+      <p class="hub-choice-hint">Select a profile</p>
     </section>
 
     <section class="profile-choice-grid" aria-label="Profile choices">
       <a class="profile-banner security-banner" href="./security/" aria-label="Open Security Engineer profile">
+        <span class="profile-index" aria-hidden="true">01</span>
         <span class="profile-icon" aria-hidden="true">
           <svg viewBox="0 0 64 64" role="img">
             <path d="M10 14h44v30H10z" />
@@ -64,11 +74,15 @@
             <path d="M34 33l-4 5" />
           </svg>
         </span>
-        <strong>Security Engineer</strong>
-        <span class="profile-action">View Profile</span>
+        <span class="profile-copy">
+          <span class="profile-label">Technology</span>
+          <strong>Security<br>Engineer</strong>
+        </span>
+        <span class="profile-action">View Profile <span aria-hidden="true">↗</span></span>
       </a>
 
       <a class="profile-banner conductor-banner" href="./conductor/" aria-label="Open Conductor profile">
+        <span class="profile-index" aria-hidden="true">02</span>
         <span class="profile-icon" aria-hidden="true">
           <svg viewBox="0 0 64 64" role="img">
             <path d="M22 42V16l24-4v26" />
@@ -77,10 +91,15 @@
             <path d="M22 24l24-4" />
           </svg>
         </span>
-        <strong>Conductor</strong>
-        <span class="profile-action">View Profile</span>
+        <span class="profile-copy">
+          <span class="profile-label">Music</span>
+          <strong>Conductor</strong>
+        </span>
+        <span class="profile-action">View Profile <span aria-hidden="true">↗</span></span>
       </a>
     </section>
+
+    <p class="hub-footer">Two disciplines · One perspective</p>
   </main>
 
   <script>
