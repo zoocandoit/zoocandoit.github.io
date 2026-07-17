@@ -257,6 +257,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
       navigationLinks[j].tabIndex = navigationLinks[j] === this ? 0 : -1;
     }
 
+    window.history.replaceState(null, "", "#" + targetPage);
     updateScrollProgress();
   });
 }
@@ -268,6 +269,14 @@ pages.forEach(function (page) {
 navigationLinks.forEach(function (link) {
   link.tabIndex = link.classList.contains("active") ? 0 : -1;
 });
+
+const requestedPage = window.location.hash.slice(1).toLowerCase();
+if (requestedPage) {
+  const requestedLink = Array.from(navigationLinks).find(function (link) {
+    return link.textContent.trim().toLowerCase() === requestedPage;
+  });
+  if (requestedLink) requestedLink.click();
+}
 
 document.querySelectorAll(".navbar-list").forEach(function (list) {
   list.addEventListener("keydown", function (event) {
@@ -281,5 +290,16 @@ document.querySelectorAll(".navbar-list").forEach(function (list) {
     const direction = event.key === "ArrowRight" ? 1 : -1;
     tabs[(current + direction + tabs.length) % tabs.length].click();
     tabs[(current + direction + tabs.length) % tabs.length].focus();
+  });
+});
+
+// Keep the performance archive compact: opening one item closes the others.
+document.querySelectorAll(".video-link-card").forEach(function (card) {
+  card.addEventListener("toggle", function () {
+    if (!card.open) return;
+
+    document.querySelectorAll(".video-link-card[open]").forEach(function (openCard) {
+      if (openCard !== card) openCard.removeAttribute("open");
+    });
   });
 });
