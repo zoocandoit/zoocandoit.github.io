@@ -303,3 +303,16 @@ document.querySelectorAll(".video-link-card").forEach(function (card) {
     });
   });
 });
+
+// Career details stay in context and only one expanded entry is kept open.
+document.querySelectorAll(".career-accordion > details").forEach(function (career) {
+  career.addEventListener("toggle", function () {
+    if (career.open) {
+      document.querySelectorAll(".career-accordion > details[open]").forEach(function (openCareer) {
+        if (openCareer !== career) openCareer.removeAttribute("open");
+      });
+    }
+
+    window.requestAnimationFrame(updateScrollProgress);
+  });
+});
