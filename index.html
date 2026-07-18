@@ -42,12 +42,6 @@
 </head>
 
 <body class="profile-hub profile-index-page">
-  <header class="index-header">
-    <a class="index-mark" href="./" aria-label="Jooyoung Roh home">J / R</a>
-    <p>Seoul, South Korea</p>
-    <a href="mailto:hpjoo718@gmail.com">Contact</a>
-  </header>
-
   <main class="index-main">
     <section class="index-intro" aria-labelledby="profile-name">
       <p class="index-kicker">Personal index</p>
@@ -55,6 +49,11 @@
         <span>노주영</span>
         <span lang="en">Jooyoung Roh</span>
       </h1>
+      <div class="index-profile-links" aria-label="Profile links">
+        <a href="mailto:hpjoo718@gmail.com">Email</a>
+        <a href="https://github.com/zoocandoit" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/jooyoung-roh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
     </section>
 
     <nav class="index-routes" aria-label="Profile sections">
@@ -85,14 +84,6 @@
       </a>
     </nav>
   </main>
-
-  <footer class="index-footer">
-    <p>© Jooyoung Roh</p>
-    <div>
-      <a href="https://github.com/zoocandoit" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/jooyoung-roh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </div>
-  </footer>
 
   <script>
     if (sessionStorage.getItem("profileTransition") === "home") {
