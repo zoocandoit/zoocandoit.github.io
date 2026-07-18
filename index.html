@@ -29,7 +29,7 @@
         "description": "Profile of 노주영 (Jooyoung Roh) cyber security & conducting",
         "url": "https://zoocandoit.github.io/",
         "image": "https://zoocandoit.github.io/assets/images/my-avatar.png",
-        "jobTitle": ["정보보안", "지휘"],
+        "jobTitle": ["Cyber Security", "Conducting"],
         "sameAs": [
           "https://github.com/zoocandoit",
           "https://www.linkedin.com/in/jooyoung-roh"
@@ -38,112 +38,69 @@
     }
   </script>
 
-  <link rel="stylesheet" href="./assets/css/style.css?v=20260718-1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20260718-2">
 </head>
 
-<body class="profile-hub">
-  <div class="hub-atmosphere" aria-hidden="true">
-    <span class="hub-orb hub-orb-blue"></span>
-    <span class="hub-orb hub-orb-gold"></span>
-    <span class="hub-noise"></span>
-  </div>
+<body class="profile-hub profile-index-page">
+  <header class="index-header">
+    <a class="index-mark" href="./" aria-label="Jooyoung Roh home">J / R</a>
+    <p>Seoul, South Korea</p>
+    <a href="mailto:hpjoo718@gmail.com">Contact</a>
+  </header>
 
-  <main class="hub-shell">
-    <section class="hub-welcome" aria-labelledby="welcome-title">
-      <div class="hub-title-group">
-        <p id="welcome-title"><span></span> Profile</p>
-        <h1>노주영 <span lang="en">Jooyoung Roh</span></h1>
-      </div>
-      <p class="hub-choice-hint">Select a profile</p>
+  <main class="index-main">
+    <section class="index-intro" aria-labelledby="profile-name">
+      <p class="index-kicker">Personal index</p>
+      <h1 id="profile-name">
+        <span>노주영</span>
+        <span lang="en">Jooyoung Roh</span>
+      </h1>
     </section>
 
-    <section class="profile-choice-grid" aria-label="Profile choices">
-      <a class="profile-banner security-banner" href="./security/" aria-label="Open Cyber Security profile">
-        <span class="profile-index" aria-hidden="true">01</span>
-        <span class="profile-icon" aria-hidden="true">
-          <svg viewBox="0 0 64 64" role="img">
-            <path d="M10 14h44v30H10z" />
-            <path d="M26 44h12v8H26z" />
-            <path d="M20 52h24" />
-            <path d="M18 22h14" />
-            <path d="M18 30h8" />
-            <path d="M39 23l5 5-5 5" />
-            <path d="M34 33l-4 5" />
-          </svg>
-        </span>
-        <span class="profile-copy">
-          <span class="profile-label">Technology</span>
+    <nav class="index-routes" aria-label="Profile sections">
+      <a class="profile-route route-security" href="./security/">
+        <span class="route-number" aria-hidden="true">01</span>
+        <span class="route-copy">
+          <span class="route-label">Practice</span>
           <strong>Cyber Security</strong>
+          <span class="route-summary">Cloud security, security management, and SecOps.</span>
         </span>
-        <span class="profile-action">View Profile <span aria-hidden="true">↗</span></span>
+        <span class="route-image route-security-image" aria-hidden="true">
+          <img src="./assets/images/my-avatar.png" alt="">
+        </span>
+        <span class="route-arrow" aria-hidden="true">↗</span>
       </a>
 
-      <a class="profile-banner conductor-banner" href="./conductor/" aria-label="Open Conductor profile">
-        <span class="profile-index" aria-hidden="true">02</span>
-        <span class="profile-icon" aria-hidden="true">
-          <svg viewBox="0 0 64 64" role="img">
-            <path d="M22 42V16l24-4v26" />
-            <path d="M22 42c0 5-4 8-9 8s-8-2-8-6 4-7 9-7c3 0 6 1 8 3Z" />
-            <path d="M46 38c0 5-4 8-9 8s-8-2-8-6 4-7 9-7c3 0 6 1 8 3Z" />
-            <path d="M22 24l24-4" />
-          </svg>
+      <a class="profile-route route-conductor" href="./conductor/">
+        <span class="route-number" aria-hidden="true">02</span>
+        <span class="route-copy">
+          <span class="route-label">Practice</span>
+          <strong>Conducting</strong>
+          <span class="route-summary">Orchestral and choral conducting, music, and technology.</span>
         </span>
-        <span class="profile-copy">
-          <span class="profile-label">Music</span>
-          <strong>Conductor</strong>
+        <span class="route-image route-conductor-image" aria-hidden="true">
+          <img src="./assets/images/conductor-main.jpg" alt="">
         </span>
-        <span class="profile-action">View Profile <span aria-hidden="true">↗</span></span>
+        <span class="route-arrow" aria-hidden="true">↗</span>
       </a>
-    </section>
-
-    <p class="hub-footer">Two disciplines · One perspective</p>
+    </nav>
   </main>
 
+  <footer class="index-footer">
+    <p>© Jooyoung Roh</p>
+    <div>
+      <a href="https://github.com/zoocandoit" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/jooyoung-roh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+
   <script>
-    const root = document.documentElement;
-
-    window.addEventListener("pointermove", (event) => {
-      const x = Math.round((event.clientX / window.innerWidth) * 100);
-      const y = Math.round((event.clientY / window.innerHeight) * 100);
-
-      root.style.setProperty("--cursor-x", `${x}%`);
-      root.style.setProperty("--cursor-y", `${y}%`);
-    });
-
-    document.querySelectorAll(".profile-banner").forEach((link) => {
-      link.addEventListener("click", (event) => {
-        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-
-        event.preventDefault();
-
-        const rect = link.getBoundingClientRect();
-        const x = `${Math.round(rect.left + rect.width / 2)}px`;
-        const y = `${Math.round(rect.top + rect.height / 2)}px`;
-
-        root.style.setProperty("--transition-x", x);
-        root.style.setProperty("--transition-y", y);
-        sessionStorage.setItem("profileTransition", "in");
-
-        link.classList.add("is-transitioning");
-        if (link.classList.contains("conductor-banner")) {
-          document.body.classList.add("page-transition-light");
-        }
-        document.body.classList.add("page-transition-out");
-
-        window.setTimeout(() => {
-          window.location.href = link.href;
-        }, 430);
-      });
-    });
-
     if (sessionStorage.getItem("profileTransition") === "home") {
       sessionStorage.removeItem("profileTransition");
       document.body.classList.add("page-transition-in");
       window.setTimeout(() => document.body.classList.remove("page-transition-in"), 650);
     }
+
   </script>
 </body>
 
