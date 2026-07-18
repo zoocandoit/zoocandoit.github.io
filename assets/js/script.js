@@ -87,7 +87,7 @@ if (sessionStorage.getItem("profileTransition") === "in") {
   document.body.classList.add("page-transition-in");
   window.setTimeout(function () {
     document.body.classList.remove("page-transition-in");
-  }, 650);
+  }, 400);
 }
 
 const profileHomeLinks = document.querySelectorAll(".floating-home-link");
@@ -98,9 +98,6 @@ profileHomeLinks.forEach(function (link) {
 
     event.preventDefault();
 
-    const rect = link.getBoundingClientRect();
-    document.documentElement.style.setProperty("--transition-x", Math.round(rect.left + rect.width / 2) + "px");
-    document.documentElement.style.setProperty("--transition-y", Math.round(rect.top + rect.height / 2) + "px");
     sessionStorage.setItem("profileTransition", "home");
 
     link.classList.add("is-transitioning");
@@ -108,7 +105,7 @@ profileHomeLinks.forEach(function (link) {
 
     window.setTimeout(function () {
       window.location.href = link.href;
-    }, 430);
+    }, 240);
   });
 });
 

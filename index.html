@@ -38,7 +38,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="./assets/css/style.css?v=20260718-2">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20260718-3">
 </head>
 
 <body class="profile-hub profile-index-page">
@@ -98,7 +98,7 @@
     if (sessionStorage.getItem("profileTransition") === "home") {
       sessionStorage.removeItem("profileTransition");
       document.body.classList.add("page-transition-in");
-      window.setTimeout(() => document.body.classList.remove("page-transition-in"), 650);
+      window.setTimeout(() => document.body.classList.remove("page-transition-in"), 400);
     }
 
   </script>
