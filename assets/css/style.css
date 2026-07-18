@@ -2067,6 +2067,10 @@ body.conductor-page .sidebar {
 }
 
 body.conductor-page .info-content .title {
+  width: fit-content;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
   color: hsl(34, 88%, 28%);
   background: hsl(42, 72%, 88%);
 }
@@ -2735,9 +2739,9 @@ body.profile-hub .hub-shell {
   z-index: 1;
   width: min(1180px, calc(100% - 48px));
   min-height: 100svh;
-  padding: 42px 0 28px;
-  justify-content: space-between;
-  gap: 28px;
+  padding: 40px 0 28px;
+  justify-content: center;
+  gap: 30px;
 }
 
 .hub-welcome {
@@ -2789,21 +2793,21 @@ body.profile-hub .hub-shell {
 .profile-choice-grid {
   width: 100%;
   min-width: 0;
-  min-height: min(620px, 68vh);
-  gap: 12px;
+  min-height: clamp(180px, 24vh, 220px);
+  gap: 16px;
 }
 
 .profile-banner {
   width: 100%;
   min-width: 0;
   min-height: 100%;
-  padding: clamp(24px, 3vw, 42px);
+  padding: clamp(22px, 2.4vw, 30px);
   border-color: var(--hub-line);
-  border-radius: 28px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 22px;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(18px, 2vw, 28px);
   overflow: hidden;
   box-shadow: 0 28px 80px hsla(0, 0%, 0%, 0.26);
   isolation: isolate;
@@ -2826,10 +2830,10 @@ body.profile-hub .hub-shell {
 
 .profile-banner::after {
   z-index: -1;
-  width: 320px;
-  height: 320px;
-  right: -130px;
-  bottom: -140px;
+  width: 240px;
+  height: 240px;
+  right: -100px;
+  bottom: -110px;
   border: 1px solid currentColor;
   border-radius: 50%;
   opacity: 0.12;
@@ -2862,7 +2866,9 @@ body.profile-hub .hub-shell {
 }
 
 .profile-index {
-  align-self: flex-end;
+  position: absolute;
+  top: 20px;
+  right: 22px;
   color: currentColor;
   font-size: 11px;
   letter-spacing: 0.16em;
@@ -2870,9 +2876,9 @@ body.profile-hub .hub-shell {
 }
 
 .profile-icon {
-  width: 62px;
-  height: 62px;
-  flex: 0 0 62px;
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
   border: 1px solid hsla(210, 100%, 70%, 0.24);
   border-radius: 18px;
   background: hsla(210, 100%, 60%, 0.08);
@@ -2887,11 +2893,12 @@ body.profile-hub .hub-shell {
 }
 
 .profile-copy {
-  margin-top: auto;
+  min-width: 0;
+  margin: 0;
 }
 
 .profile-label {
-  margin-bottom: 12px;
+  margin-bottom: 9px;
   color: currentColor;
   font-size: 11px;
   font-weight: var(--fw-500);
@@ -2902,19 +2909,21 @@ body.profile-hub .hub-shell {
 
 .profile-banner strong {
   color: currentColor;
-  font-size: clamp(34px, 4.5vw, 64px);
+  font-size: clamp(28px, 3vw, 42px);
   font-weight: var(--fw-500);
   line-height: 0.98;
   letter-spacing: -0.055em;
 }
 
 .profile-action {
-  width: 100%;
-  padding-top: 18px;
-  border-top: 1px solid currentColor;
+  width: auto;
+  padding: 10px 0 10px 18px;
+  border-top: 0;
+  border-left: 1px solid currentColor;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 12px;
   color: currentColor;
   opacity: 0.58;
   transition: opacity 0.35s ease;
@@ -2969,6 +2978,7 @@ body.profile-hub .hub-shell {
 }
 
 .hub-footer {
+  margin-top: -4px;
   color: hsla(0, 0%, 100%, 0.3);
   font-size: 10px;
   letter-spacing: 0.16em;
@@ -2988,7 +2998,8 @@ body.profile-hub .hub-shell {
 
 @media (max-width: 760px) {
   body.profile-hub .hub-shell {
-    width: min(100% - 24px, 560px);
+    width: calc(100% - 24px);
+    max-width: 560px;
     min-height: 100svh;
     padding: 28px 0 22px;
   }
@@ -3012,15 +3023,17 @@ body.profile-hub .hub-shell {
   }
 
   .profile-banner {
-    min-height: 260px;
-    padding: 22px;
-    border-radius: 22px;
+    min-height: 140px;
+    padding: 20px;
+    border-radius: 20px;
+    grid-template-columns: 46px minmax(0, 1fr) auto;
+    gap: 14px;
   }
 
   .profile-icon {
-    width: 52px;
-    height: 52px;
-    flex-basis: 52px;
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
   }
 
   .profile-icon svg {
@@ -3029,7 +3042,27 @@ body.profile-hub .hub-shell {
   }
 
   .profile-banner strong {
-    font-size: clamp(32px, 10vw, 46px);
+    font-size: clamp(25px, 7.5vw, 32px);
+    line-height: 1.05;
+  }
+
+  .profile-label {
+    margin-bottom: 6px;
+    font-size: 9px;
+  }
+
+  .profile-action {
+    padding-left: 12px;
+    font-size: 0;
+  }
+
+  .profile-action span {
+    font-size: 18px;
+  }
+
+  .profile-index {
+    top: 14px;
+    right: 16px;
   }
 }
 
