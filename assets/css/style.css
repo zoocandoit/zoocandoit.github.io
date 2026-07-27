@@ -2196,12 +2196,50 @@ body.conductor-page .conductor-sidebar .sidebar-info_more {
   margin-top: 8px;
 }
 
+.conductor-education {
+  margin-bottom: 42px;
+}
+
 body.conductor-page .conductor-timeline .timeline-item::after {
   box-shadow: 0 0 0 4px hsla(42, 62%, 96%, 0.95), 0 0 18px hsla(34, 88%, 42%, 0.24);
 }
 
 body.conductor-page .conductor-timeline .timeline-list span {
   color: hsl(34, 88%, 34%);
+}
+
+.faculty-link {
+  border-bottom: 1px solid hsla(34, 88%, 34%, 0.38);
+  display: inline;
+  color: hsl(230, 18%, 13%);
+  font-weight: var(--fw-600);
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.faculty-link:hover,
+.faculty-link:focus-visible {
+  border-color: hsl(34, 88%, 30%);
+  color: hsl(34, 88%, 30%);
+}
+
+.timeline-program-link {
+  width: fit-content;
+  margin-top: 12px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid hsla(34, 88%, 34%, 0.32);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: hsl(34, 88%, 30%);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.timeline-program-link:hover,
+.timeline-program-link:focus-visible {
+  border-color: hsl(34, 88%, 30%);
+  color: hsl(230, 18%, 13%);
 }
 
 .conductor-repository {
@@ -3129,6 +3167,42 @@ body.conductor-page .conductor-timeline .timeline-list span {
   inset: 0;
   background: linear-gradient(180deg, transparent 50%, hsla(0, 0%, 0%, 0.58));
   pointer-events: none;
+}
+
+.video-thumbnail-pending {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 34%, hsla(42, 86%, 72%, 0.18), transparent 38%),
+    linear-gradient(145deg, hsl(230, 18%, 18%), hsl(230, 16%, 10%));
+}
+
+.video-thumbnail-pending::after {
+  background: linear-gradient(180deg, transparent 42%, hsla(0, 0%, 0%, 0.45));
+}
+
+.video-thumbnail-pending .video-card-icon ion-icon {
+  margin-left: 0;
+}
+
+.video-pending-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  padding: 5px 8px;
+  border: 1px solid hsla(42, 86%, 72%, 0.35);
+  border-radius: 999px;
+  background: hsla(230, 18%, 13%, 0.78);
+  color: hsl(42, 86%, 78%);
+  font-size: 8px;
+  font-weight: var(--fw-600);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.video-link-card-pending .video-card-type {
+  color: hsl(34, 82%, 30%);
 }
 
 .video-thumbnail img {
