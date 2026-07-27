@@ -3943,6 +3943,10 @@ body.conductor-page article {
     hsla(42, 62%, 96%, 0.92);
 }
 
+body.conductor-page article::before {
+  display: none;
+}
+
 body.conductor-page .conductor-intro {
   position: relative;
   max-width: 76ch;
@@ -4002,6 +4006,43 @@ body.conductor-page .career-role-grid > div {
 
   .sidebar {
     border-radius: 20px;
+  }
+}
+
+@media (max-width: 1249px) {
+  body.conductor-page .conductor-sidebar .info-content .title {
+    margin-inline: 0;
+  }
+
+  body:not(.profile-hub):not(.conductor-page):not(.detail-page) .sidebar.active {
+    max-height: 760px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1249px) {
+  body.conductor-page .conductor-avatar {
+    width: 180px;
+    height: 132px;
+    flex: 0 0 180px;
+    border-radius: 24px;
+  }
+
+  body.conductor-page .conductor-avatar img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1250px) {
+  body:not(.profile-hub):not(.conductor-page):not(.detail-page) .sidebar {
+    min-width: 0;
+    flex: 0 0 275px;
+  }
+
+  body:not(.profile-hub):not(.conductor-page):not(.detail-page) .main-content {
+    min-width: 0;
+    width: auto;
+    flex: 1 1 0;
   }
 }
 
