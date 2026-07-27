@@ -2063,6 +2063,7 @@ body.conductor-page .info-content .title {
   margin-inline: auto;
   display: flex;
   justify-content: center;
+  border-color: hsla(34, 88%, 34%, 0.52);
   color: hsl(34, 88%, 28%);
   background: hsl(42, 72%, 88%);
 }
@@ -3855,6 +3856,15 @@ body.conductor-page .navbar-link.active {
   background: var(--theme-accent-soft);
   color: var(--white-2);
   transform: translateY(-2px);
+}
+
+body:not(.profile-hub):not(.conductor-page):not(.detail-page) .social-list {
+  padding-left: 0;
+}
+
+body:not(.profile-hub):not(.conductor-page):not(.detail-page) .info-content .title {
+  margin-inline: auto;
+  display: flex;
 }
 
 /* Security: compact bento surfaces and clearer scanning. */
