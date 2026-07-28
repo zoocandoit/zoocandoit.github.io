@@ -2450,6 +2450,10 @@ body.conductor-page .conductor-timeline .timeline-list span {
   color: hsl(34, 82%, 30%);
 }
 
+.repository-section-heading {
+  margin-top: 30px;
+}
+
 @media (max-width: 680px) {
   .repository-heading {
     align-items: flex-start;
@@ -3310,7 +3314,7 @@ body.conductor-page .conductor-timeline .timeline-list span {
   font-size: var(--fs-7);
 }
 
-.video-card-detail a {
+.video-card-detail > a {
   flex: 0 0 auto;
   padding: 9px 13px;
   border-radius: 999px;
@@ -3324,10 +3328,58 @@ body.conductor-page .conductor-timeline .timeline-list span {
   transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.video-card-detail a:hover,
-.video-card-detail a:focus-visible {
+.video-card-detail > a:hover,
+.video-card-detail > a:focus-visible {
   background: hsl(34, 82%, 34%);
   transform: translateY(-2px);
+}
+
+.video-card-detail-program {
+  align-items: flex-start;
+}
+
+.video-program-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.video-program-list {
+  margin-top: 12px;
+  display: grid;
+  gap: 5px;
+}
+
+.video-program-list a {
+  padding: 7px 9px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 10px;
+  background: hsla(38, 74%, 52%, 0.06);
+  color: hsl(225, 12%, 30%);
+  font-size: 12px;
+  line-height: 1.45;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.video-program-list time {
+  color: hsl(34, 82%, 30%);
+  font-weight: var(--fw-600);
+  font-variant-numeric: tabular-nums;
+}
+
+.video-program-note {
+  margin-top: 3px;
+  display: block;
+  color: hsl(225, 10%, 43%);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.video-program-list a:hover,
+.video-program-list a:focus-visible {
+  background: hsla(38, 74%, 52%, 0.14);
+  color: hsl(230, 18%, 13%);
 }
 
 @keyframes video-detail-in {
@@ -4105,6 +4157,10 @@ body.conductor-page .career-role-grid > div {
 
   .info-content .title {
     width: fit-content;
+  }
+
+  body.security-page:not(.profile-hub):not(.conductor-page):not(.detail-page) .info-content .title {
+    margin-inline: 0;
   }
 
   .conductor-avatar {
