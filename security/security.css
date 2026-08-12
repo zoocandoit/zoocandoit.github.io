@@ -79,6 +79,8 @@ body.security-page main {
   width: min(1180px, calc(100% - 48px));
   margin: 88px auto 120px;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: stretch;
   gap: 22px;
 }
 
@@ -308,6 +310,7 @@ body.security-page .navbar-link.active::after {
 
 body.security-page article,
 body.security-page:not(.profile-hub):not(.conductor-page):not(.detail-page) article {
+  box-sizing: border-box;
   width: 100%;
   min-height: 660px;
   padding: clamp(34px, 5vw, 72px);
@@ -866,13 +869,65 @@ body.security-page .motion-item {
   body.security-page .sidebar {
     padding: 32px;
     grid-template-columns: 1fr;
-    gap: 26px;
+    gap: 0;
+  }
+
+  body.security-page .sidebar-info {
+    grid-template-columns: 132px minmax(0, 1fr);
+    gap: 12px 24px;
+  }
+
+  body.security-page .avatar-box {
+    align-self: start;
+  }
+
+  body.security-page .info_more-btn {
+    position: relative;
+    inset: auto;
+    width: auto;
+    height: 36px;
+    min-height: 36px;
+    padding: 0 12px;
+    border: 1px solid var(--security-line);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.025);
+    box-shadow: none;
+    color: var(--security-muted);
+    font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+    font-size: 10px;
+    margin-top: 14px;
+  }
+
+  body.security-page .info_more-btn::before {
+    display: none;
+  }
+
+  body.security-page .info_more-btn span {
+    display: inline;
+  }
+
+  body.security-page .sidebar.active .info_more-btn ion-icon {
+    transform: rotate(180deg);
   }
 
   body.security-page .sidebar-info_more {
-    padding: 24px 0 0;
+    max-height: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 260ms ease, padding 260ms ease, opacity 180ms ease;
+  }
+
+  body.security-page .sidebar.active .sidebar-info_more {
+    max-height: 240px;
+    padding-top: 24px;
     border-top: 1px solid var(--security-line);
-    border-left: 0;
+    opacity: 1;
   }
 
   body.security-page:not(.profile-hub):not(.conductor-page):not(.detail-page) article.about.active {
@@ -920,7 +975,6 @@ body.security-page .motion-item {
   }
 
   body.security-page .avatar-box {
-    grid-row: 1 / span 2;
     align-self: start;
     width: 86px;
     height: 86px;
@@ -933,57 +987,6 @@ body.security-page .motion-item {
   body.security-page .info-content .title {
     margin-top: 11px;
     font-size: 9px;
-  }
-
-  body.security-page .info_more-btn {
-    position: relative;
-    grid-column: 2;
-    justify-self: start;
-    z-index: 2;
-    width: auto;
-    height: 36px;
-    min-height: 36px;
-    padding: 0 12px;
-    border: 1px solid var(--security-line);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.025);
-    box-shadow: none;
-    color: var(--security-muted);
-    font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
-    font-size: 10px;
-    transform: none;
-    overflow: hidden;
-  }
-
-  body.security-page .info_more-btn::before {
-    display: none;
-  }
-
-  body.security-page .info_more-btn span {
-    display: inline;
-  }
-
-  body.security-page .sidebar.active .info_more-btn ion-icon {
-    transform: rotate(180deg);
-  }
-
-  body.security-page .sidebar-info_more {
-    max-height: 0;
-    padding: 0;
-    border: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 260ms ease, padding 260ms ease, opacity 180ms ease;
-  }
-
-  body.security-page .sidebar.active .sidebar-info_more {
-    max-height: 240px;
-    padding-top: 24px;
-    border-top: 1px solid var(--security-line);
-    opacity: 1;
   }
 
   body.security-page .navbar {
