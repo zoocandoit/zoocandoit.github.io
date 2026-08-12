@@ -964,28 +964,39 @@ body.security-page .motion-item {
   }
 
   body.security-page .sidebar {
-    padding: 24px 20px;
+    padding: 20px;
     border-radius: 14px;
   }
 
   body.security-page .sidebar-info {
-    grid-template-columns: 86px minmax(0, 1fr);
-    gap: 12px 18px;
+    grid-template-columns: 68px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px 16px;
     padding-right: 0;
   }
 
   body.security-page .avatar-box {
     align-self: start;
-    width: 86px;
-    height: 86px;
+    width: 68px;
+    height: 68px;
   }
 
   body.security-page .info-content .name {
-    font-size: clamp(24px, 8.5vw, 36px);
+    font-size: clamp(18px, 5vw, 20px);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
   }
 
   body.security-page .info-content .title {
-    margin-top: 11px;
+    margin-top: 7px;
+    font-size: 10px;
+  }
+
+  body.security-page .info_more-btn {
+    height: 32px;
+    min-height: 32px;
+    margin-top: 10px;
+    padding: 0 10px;
     font-size: 9px;
   }
 
@@ -1000,7 +1011,7 @@ body.security-page .motion-item {
   }
 
   body.security-page .navbar-link {
-    min-height: 48px;
+    min-height: 44px;
     padding: 0 4px;
     font-size: 9px;
   }
