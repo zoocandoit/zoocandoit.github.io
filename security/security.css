@@ -1,0 +1,1060 @@
+:root {
+  --security-bg: #0c0d0f;
+  --security-panel: #111316;
+  --security-panel-2: #171a1f;
+  --security-text: #f0f0ed;
+  --security-muted: #a2a4a5;
+  --security-faint: #73767a;
+  --security-line: rgba(255, 255, 255, 0.11);
+  --security-signal: #aabbd0;
+  --security-cyan: #b6c8d8;
+  --security-danger: #ff8b7b;
+}
+
+html {
+  color-scheme: dark;
+  overflow-x: clip;
+}
+
+body.security-page {
+  min-height: 100svh;
+  overflow-x: clip;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(126, 145, 168, 0.09), transparent 34rem),
+    var(--security-bg);
+  color: var(--security-text);
+  font-family: "Inter", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+body.security-page ::selection {
+  background: var(--security-signal);
+  color: var(--security-panel);
+}
+
+body.security-page :is(a, button, summary) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body.security-page :is(a, button, summary):focus-visible {
+  outline: 2px solid var(--security-signal);
+  outline-offset: 4px;
+}
+
+body.security-page .scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+  display: block;
+  width: calc(var(--scroll-progress, 0) * 100%);
+  height: 2px;
+  background: var(--security-signal);
+}
+
+body.security-page .profile-home-link {
+  position: fixed;
+  top: 22px;
+  left: 24px;
+  z-index: 300;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--security-line);
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(7, 10, 15, 0.78);
+  color: var(--security-muted);
+  font-size: 12px;
+  backdrop-filter: blur(16px);
+  transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+body.security-page .profile-home-link span {
+  color: var(--security-signal);
+}
+
+body.security-page main {
+  width: min(1180px, calc(100% - 48px));
+  margin: 88px auto 120px;
+  display: grid;
+  gap: 22px;
+}
+
+body.security-page .sidebar {
+  position: relative;
+  width: 100%;
+  max-height: none;
+  padding: 42px 46px;
+  border: 1px solid var(--security-line);
+  border-radius: 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  align-items: center;
+  gap: 42px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #161a1f, #0f1114 70%);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.26);
+}
+
+body.security-page .sidebar-info,
+body.security-page .sidebar-info_more {
+  position: relative;
+  z-index: 1;
+}
+
+body.security-page .sidebar-info {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  align-items: center;
+  gap: 30px;
+}
+
+body.security-page .avatar-box {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  border: 1px solid var(--security-line);
+  border-radius: 50%;
+  overflow: hidden;
+  background: #15181c;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+body.security-page .avatar-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.03);
+}
+
+body.security-page .info-content {
+  min-width: 0;
+}
+
+body.security-page .info-content .name {
+  max-width: 620px;
+  color: var(--security-text);
+  font-family: "Space Grotesk", "Apple SD Gothic Neo", sans-serif;
+  font-size: clamp(30px, 4.2vw, 54px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+body.security-page .info-content .title {
+  width: fit-content;
+  min-height: 0;
+  margin: 18px 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  color: var(--security-muted);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+
+body.security-page .info-content .title::before {
+  display: none;
+}
+
+body.security-page .info_more-btn {
+  display: none;
+}
+
+body.security-page .sidebar-info_more {
+  max-height: none;
+  padding: 0 0 0 42px;
+  border-left: 1px solid var(--security-line);
+  opacity: 1;
+}
+
+body.security-page .sidebar-info_more .separator {
+  display: none;
+}
+
+body.security-page .contact-section-title {
+  margin-bottom: 14px;
+  color: var(--security-faint);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.security-page :is(.contacts-list, .contact-item, .contact-info, .email-copy-row) {
+  min-width: 0;
+  width: 100%;
+}
+
+body.security-page .email-copy-row {
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  align-items: center;
+  gap: 10px;
+}
+
+body.security-page .contact-title {
+  display: none;
+}
+
+body.security-page .contact-link {
+  min-width: 0;
+  color: var(--security-text);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body.security-page .copy-email-btn,
+body.security-page .social-link {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--security-line);
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--security-muted);
+  font-size: 16px;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+body.security-page .copy-email-btn.is-copied {
+  border-color: var(--security-signal);
+  color: var(--security-signal);
+}
+
+body.security-page .social-list {
+  margin-top: 18px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--security-line);
+  display: flex;
+  gap: 8px;
+}
+
+body.security-page .main-content {
+  width: 100%;
+  min-width: 0;
+}
+
+body.security-page .navbar {
+  position: sticky;
+  top: 16px;
+  left: auto;
+  bottom: auto;
+  z-index: 200;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 6px;
+  border: 1px solid var(--security-line);
+  border-radius: 10px;
+  background: rgba(8, 12, 18, 0.82);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+}
+
+body.security-page .navbar-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+body.security-page .navbar-item {
+  width: auto;
+}
+
+body.security-page .navbar-link {
+  position: relative;
+  width: 100%;
+  min-height: 46px;
+  padding: 0 16px;
+  border-radius: 6px;
+  color: var(--security-muted);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+body.security-page .navbar-link::after {
+  position: absolute;
+  inset: auto 18px 7px;
+  height: 1px;
+  background: var(--security-signal);
+  content: "";
+  opacity: 0;
+  transform: scaleX(0.25);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+body.security-page .navbar-link.active {
+  background: rgba(170, 187, 208, 0.08);
+  color: var(--security-text);
+}
+
+body.security-page .navbar-link.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+body.security-page article,
+body.security-page:not(.profile-hub):not(.conductor-page):not(.detail-page) article {
+  width: 100%;
+  min-height: 660px;
+  padding: clamp(34px, 5vw, 72px);
+  border: 1px solid var(--security-line);
+  border-radius: 18px;
+  display: none;
+  background: linear-gradient(145deg, rgba(17, 25, 35, 0.9), rgba(9, 13, 19, 0.96));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+}
+
+body.security-page article.active,
+body.security-page:not(.profile-hub):not(.conductor-page):not(.detail-page) article.active {
+  display: block;
+}
+
+body.security-page article::before {
+  display: none;
+}
+
+body.security-page article > header {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body.security-page :is(.certificates-title, .awards-title, .projects-title, .timeline .title-wrapper .h3) {
+  color: var(--security-text);
+  font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.security-page:not(.profile-hub):not(.conductor-page):not(.detail-page) article.about.active {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+  grid-template-areas:
+    "intro certificates"
+    "intro awards";
+  align-items: start;
+  gap: 38px clamp(48px, 7vw, 90px);
+}
+
+body.security-page .about-text { grid-area: intro; }
+body.security-page .certificates { grid-area: certificates; }
+body.security-page .awards { grid-area: awards; }
+
+body.security-page .about-text {
+  max-width: 680px;
+  color: var(--security-muted);
+  font-size: 16px;
+}
+
+body.security-page .about-text p:first-child {
+  color: var(--security-text);
+  font-family: "Space Grotesk", "Apple SD Gothic Neo", sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+}
+
+body.security-page .about-text p + p {
+  margin-top: 28px;
+}
+
+body.security-page :is(.certificates, .awards, .projects, .timeline) {
+  margin: 0;
+}
+
+body.security-page :is(.certificates-title, .awards-title, .projects-title) {
+  margin-bottom: 18px;
+}
+
+body.security-page .certificates-list {
+  display: block;
+}
+
+body.security-page .certificates-item {
+  position: relative;
+  min-height: 0;
+  margin: 0;
+  padding: 13px 0 13px 24px;
+  border: 0;
+  border-top: 1px solid var(--security-line);
+  border-radius: 0;
+  background: none;
+  color: var(--security-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+body.security-page .certificates-item::before {
+  top: 20px;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--security-signal);
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.security-page .awards-item {
+  position: relative;
+  padding: 18px 18px 18px 20px;
+  border: 1px solid var(--security-line);
+  border-left: 2px solid var(--security-signal);
+  border-radius: 0 8px 8px 0;
+  background: rgba(170, 187, 208, 0.04);
+}
+
+body.security-page .awards-item::before {
+  display: none;
+}
+
+body.security-page .awards-item-title {
+  color: var(--security-text);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+body.security-page .awards-item-text,
+body.security-page .awards-item-date {
+  color: var(--security-muted);
+  font-size: 12px;
+}
+
+body.security-page .awards-item-date {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+  color: var(--security-signal);
+}
+
+body.security-page .resume .timeline + .timeline,
+body.security-page .projects + .projects {
+  margin-top: 72px;
+}
+
+body.security-page .timeline .title-wrapper {
+  margin-bottom: 26px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--security-line);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+body.security-page .timeline .icon-box {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(170, 187, 208, 0.28);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(170, 187, 208, 0.06);
+  color: var(--security-signal);
+  box-shadow: none;
+}
+
+body.security-page .total-experience {
+  margin-left: auto;
+  color: var(--security-signal);
+  font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+body.security-page .timeline-list,
+body.security-page .timeline-list:has(.career-accordion) {
+  margin: 0;
+  padding: 0;
+}
+
+body.security-page .timeline-item,
+body.security-page .career-accordion {
+  position: relative;
+  margin: 0;
+  padding: 22px 0 22px 28px;
+  border-left: 1px solid var(--security-line);
+}
+
+body.security-page .timeline-item::before,
+body.security-page .career-accordion::before {
+  top: 31px;
+  left: -4px;
+  width: 7px;
+  height: 7px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--security-faint);
+  box-shadow: 0 0 0 5px var(--security-panel);
+}
+
+body.security-page .timeline-item::after,
+body.security-page .career-accordion::after {
+  display: none;
+}
+
+body.security-page .timeline-item-title {
+  margin-bottom: 5px;
+  color: var(--security-text);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+body.security-page .timeline-list > .timeline-item > span,
+body.security-page .timeline-text {
+  color: var(--security-muted);
+  font-size: 13px;
+}
+
+body.security-page .timeline-list > .timeline-item > span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--security-signal);
+  font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+  font-size: 10px;
+}
+
+body.security-page .timeline-item.clickable {
+  cursor: pointer;
+}
+
+body.security-page .timeline-detail-hint {
+  color: var(--security-faint);
+  font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+  font-size: 10px;
+}
+
+body.security-page .career-accordion {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+body.security-page .career-accordion > details {
+  border-bottom: 1px solid var(--security-line);
+}
+
+body.security-page .career-accordion summary {
+  min-height: 112px;
+  padding: 24px 56px 24px 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: background 180ms ease, padding-left 180ms ease;
+}
+
+body.security-page .career-summary-main {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.65fr) minmax(220px, 1fr);
+  gap: 4px 28px;
+}
+
+body.security-page .career-role {
+  color: var(--security-text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+body.security-page .career-company {
+  color: var(--security-muted);
+  font-size: 14px;
+}
+
+body.security-page .career-summary-text {
+  grid-column: 2;
+  color: var(--security-faint);
+  font-size: 12px;
+}
+
+body.security-page .career-period {
+  color: var(--security-muted);
+  font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+body.security-page .career-toggle {
+  position: absolute;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--security-line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--security-signal);
+}
+
+body.security-page details[open] summary {
+  padding-left: 30px;
+  background: linear-gradient(90deg, rgba(170, 187, 208, 0.07), transparent 66%);
+}
+
+body.security-page details[open] .career-toggle ion-icon {
+  transform: rotate(45deg);
+}
+
+body.security-page .career-panel {
+  padding: 32px;
+  border-top: 1px solid var(--security-line);
+  display: block;
+  background: rgba(0, 0, 0, 0.17);
+}
+
+body.security-page .career-context {
+  padding: 0 0 24px;
+  border: 0;
+  border-bottom: 1px solid var(--security-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+body.security-page .career-eyebrow {
+  color: var(--security-signal);
+  font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.security-page .career-context h5 {
+  margin: 10px 0;
+  color: var(--security-text);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+body.security-page .career-context p,
+body.security-page .career-context a {
+  color: var(--security-muted);
+  font-size: 12px;
+}
+
+body.security-page .career-context a {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--security-cyan);
+}
+
+body.security-page .career-focus-list {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+body.security-page .career-focus-list span {
+  padding: 5px 8px;
+  border: 1px solid var(--security-line);
+  border-radius: 4px;
+  color: var(--security-muted);
+  font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+body.security-page .career-role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--security-line);
+}
+
+body.security-page .career-role-grid > div {
+  min-width: 0;
+  padding: 16px;
+  border: 0;
+  border-radius: 0;
+  background: var(--security-panel);
+}
+
+body.security-page .career-role-grid strong {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--security-text);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+body.security-page .career-role-grid span {
+  color: var(--security-muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+body.security-page .project-list {
+  border-top: 1px solid var(--security-line);
+}
+
+body.security-page .project-item,
+body.security-page .project-item.active {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+body.security-page .project-content {
+  position: relative;
+  min-height: 0;
+  padding: 26px 18px 26px 124px;
+  border: 0;
+  border-bottom: 1px solid var(--security-line);
+  border-radius: 0;
+  display: block;
+  background: transparent;
+  transition: background 180ms ease, padding-left 180ms ease;
+}
+
+body.security-page .project-badge {
+  position: absolute;
+  top: 30px;
+  left: 4px;
+  min-width: 82px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--security-signal);
+  font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+body.security-page .project-title {
+  margin: 0 0 10px;
+  color: var(--security-text);
+  font-family: "Space Grotesk", "Apple SD Gothic Neo", sans-serif;
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 500;
+  line-height: 1.38;
+  letter-spacing: -0.02em;
+}
+
+body.security-page :is(.project-authors, .project-venue, .project-impact) {
+  color: var(--security-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+body.security-page .project-authors strong,
+body.security-page .project-impact {
+  color: var(--security-cyan);
+}
+
+body.security-page .news-card {
+  min-height: 132px;
+  padding: 26px 130px 26px 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.security-page .news-date {
+  position: absolute;
+  top: 30px;
+  left: 4px;
+  color: var(--security-signal);
+  font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+  font-size: 10px;
+}
+
+body.security-page .news-card .project-title {
+  margin-bottom: 8px;
+}
+
+body.security-page .news-read-more {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  color: var(--security-muted);
+  font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+  font-size: 10px;
+  transform: translateY(-50%);
+}
+
+body.security-page .motion-item {
+  animation: security-enter 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--motion-order, 0) * 35ms);
+}
+
+@keyframes security-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.security-page .profile-home-link:hover,
+  body.security-page :is(.copy-email-btn, .social-link):hover {
+    border-color: rgba(170, 187, 208, 0.48);
+    color: var(--security-signal);
+    transform: translateY(-2px);
+  }
+
+  body.security-page .navbar-link:hover {
+    color: var(--security-text);
+  }
+
+  body.security-page .career-accordion summary:hover,
+  body.security-page .project-content:hover {
+    background: linear-gradient(90deg, rgba(170, 187, 208, 0.05), transparent 72%);
+  }
+
+  body.security-page .project-content:hover {
+    padding-left: 132px;
+  }
+
+  body.security-page .news-card:hover {
+    padding-left: 138px;
+  }
+
+  body.security-page .career-context a:hover,
+  body.security-page .news-card:hover .news-read-more {
+    color: var(--security-signal);
+  }
+}
+
+@media (max-width: 900px) {
+  body.security-page main {
+    width: min(760px, calc(100% - 28px));
+    margin-top: 76px;
+  }
+
+  body.security-page .sidebar {
+    padding: 32px;
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  body.security-page .sidebar-info_more {
+    padding: 24px 0 0;
+    border-top: 1px solid var(--security-line);
+    border-left: 0;
+  }
+
+  body.security-page:not(.profile-hub):not(.conductor-page):not(.detail-page) article.about.active {
+    grid-template-columns: 1fr;
+    grid-template-areas: "intro" "certificates" "awards";
+    gap: 42px;
+  }
+
+  body.security-page .career-summary-main {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  body.security-page .career-summary-text {
+    grid-column: 1;
+  }
+
+}
+
+@media (max-width: 600px) {
+  body.security-page {
+    font-size: 15px;
+  }
+
+  body.security-page .profile-home-link {
+    top: 12px;
+    left: 12px;
+  }
+
+  body.security-page main {
+    width: calc(100% - 20px);
+    margin: 64px auto 72px;
+    gap: 12px;
+  }
+
+  body.security-page .sidebar {
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+
+  body.security-page .sidebar-info {
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 18px;
+    padding-right: 44px;
+  }
+
+  body.security-page .avatar-box {
+    width: 86px;
+    height: 86px;
+  }
+
+  body.security-page .info-content .name {
+    font-size: clamp(24px, 8.5vw, 36px);
+  }
+
+  body.security-page .info-content .title {
+    margin-top: 11px;
+    font-size: 9px;
+  }
+
+  body.security-page .info_more-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    padding: 0;
+    border: 1px solid var(--security-line);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--security-muted);
+    font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
+    font-size: 12px;
+    transform: translateY(-50%);
+  }
+
+  body.security-page .info_more-btn span {
+    display: none;
+  }
+
+  body.security-page .sidebar-info_more {
+    max-height: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 260ms ease, padding 260ms ease, opacity 180ms ease;
+  }
+
+  body.security-page .sidebar.active .sidebar-info_more {
+    max-height: 240px;
+    padding-top: 24px;
+    border-top: 1px solid var(--security-line);
+    opacity: 1;
+  }
+
+  body.security-page .navbar {
+    position: sticky;
+    inset: auto;
+    top: 8px;
+    width: 100%;
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-radius: 12px;
+  }
+
+  body.security-page .navbar-link {
+    min-height: 48px;
+    padding: 0 4px;
+    font-size: 9px;
+  }
+
+  body.security-page article,
+  body.security-page:not(.profile-hub):not(.conductor-page):not(.detail-page) article {
+    min-height: 560px;
+    padding: 34px 20px 46px;
+    border-radius: 14px;
+  }
+
+  body.security-page .about-text p:first-child {
+    font-size: 23px;
+  }
+
+  body.security-page .resume .timeline + .timeline,
+  body.security-page .projects + .projects {
+    margin-top: 56px;
+  }
+
+  body.security-page .career-accordion summary {
+    min-height: 128px;
+    padding: 22px 42px 22px 12px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  body.security-page details[open] summary {
+    padding-left: 18px;
+  }
+
+  body.security-page .career-period {
+    white-space: normal;
+  }
+
+  body.security-page .career-toggle {
+    right: 8px;
+  }
+
+  body.security-page .career-panel {
+    padding: 24px 14px;
+  }
+
+  body.security-page .career-role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.security-page .project-content,
+  body.security-page .project-content:hover {
+    padding: 54px 4px 24px;
+  }
+
+  body.security-page .project-badge,
+  body.security-page .news-date {
+    top: 22px;
+    left: 4px;
+  }
+
+  body.security-page .news-card,
+  body.security-page .news-card:hover {
+    min-height: 0;
+    padding: 56px 4px 62px;
+  }
+
+  body.security-page .news-read-more {
+    top: auto;
+    right: auto;
+    bottom: 24px;
+    left: 4px;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.security-page *,
+  body.security-page *::before,
+  body.security-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
