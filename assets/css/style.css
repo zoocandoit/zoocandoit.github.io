@@ -3335,12 +3335,18 @@ body.conductor-page .conductor-timeline .timeline-list span {
 }
 
 .video-card-detail-program {
-  align-items: flex-start;
+  align-items: stretch;
+  flex-direction: column;
 }
 
 .video-program-copy {
+  width: 100%;
   min-width: 0;
   flex: 1;
+}
+
+.video-card-detail-program > a {
+  align-self: flex-end;
 }
 
 .video-program-list {
