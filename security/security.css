@@ -53,7 +53,7 @@ body.security-page .scroll-progress {
 }
 
 body.security-page .profile-home-link {
-  position: fixed;
+  position: absolute;
   top: 22px;
   left: 24px;
   z-index: 300;
@@ -75,7 +75,7 @@ body.security-page .profile-home-link span {
   color: var(--security-signal);
 }
 
-body.security-page main {
+body.security-page:not(.profile-hub):not(.detail-page) main {
   width: min(1180px, calc(100% - 48px));
   margin: 88px auto 120px;
   display: grid;
@@ -86,8 +86,11 @@ body.security-page main {
 
 body.security-page .sidebar {
   position: relative;
+  top: auto;
   width: 100%;
+  height: auto;
   max-height: none;
+  margin: 0;
   padding: 42px 46px;
   border: 1px solid var(--security-line);
   border-radius: 22px;
@@ -177,6 +180,7 @@ body.security-page .sidebar-info_more {
   padding: 0 0 0 42px;
   border-left: 1px solid var(--security-line);
   opacity: 1;
+  visibility: visible;
 }
 
 body.security-page .sidebar-info_more .separator {
@@ -195,6 +199,15 @@ body.security-page .contact-section-title {
 body.security-page :is(.contacts-list, .contact-item, .contact-info, .email-copy-row) {
   min-width: 0;
   width: 100%;
+}
+
+body.security-page .contacts-list {
+  grid-template-columns: 1fr;
+}
+
+body.security-page .contact-item,
+body.security-page .contact-info {
+  max-width: none;
 }
 
 body.security-page .email-copy-row {
@@ -699,6 +712,10 @@ body.security-page .career-role-grid > div {
   background: var(--security-panel);
 }
 
+body.security-page .career-role-grid > div:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 body.security-page .career-role-grid strong {
   display: block;
   margin-bottom: 7px;
@@ -860,8 +877,14 @@ body.security-page .motion-item {
   }
 }
 
-@media (max-width: 900px) {
-  body.security-page main {
+@media (min-width: 1024px) {
+  body.security-page .info-content .name {
+    font-size: clamp(30px, 3.6vw, 54px);
+  }
+}
+
+@media (max-width: 1023px) {
+  body.security-page:not(.profile-hub):not(.detail-page) main {
     width: min(760px, calc(100% - 28px));
     margin-top: 76px;
   }
@@ -920,6 +943,7 @@ body.security-page .motion-item {
     border: 0;
     overflow: hidden;
     opacity: 0;
+    visibility: hidden;
     transition: max-height 260ms ease, padding 260ms ease, opacity 180ms ease;
   }
 
@@ -928,6 +952,7 @@ body.security-page .motion-item {
     padding-top: 24px;
     border-top: 1px solid var(--security-line);
     opacity: 1;
+    visibility: visible;
   }
 
   body.security-page:not(.profile-hub):not(.conductor-page):not(.detail-page) article.about.active {
@@ -957,7 +982,7 @@ body.security-page .motion-item {
     left: 12px;
   }
 
-  body.security-page main {
+  body.security-page:not(.profile-hub):not(.detail-page) main {
     width: calc(100% - 20px);
     margin: 64px auto 72px;
     gap: 12px;
