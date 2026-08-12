@@ -774,33 +774,46 @@ body.security-page .project-impact {
 
 body.security-page .news-card {
   min-height: 132px;
-  padding: 26px 130px 26px 130px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 26px 18px;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) 100px;
+  grid-template-areas:
+    "date title action"
+    "source title action";
+  align-items: start;
+  gap: 6px 28px;
 }
 
 body.security-page .news-date {
-  position: absolute;
-  top: 30px;
-  left: 4px;
+  position: static;
+  grid-area: date;
   color: var(--security-signal);
   font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
   font-size: 10px;
 }
 
 body.security-page .news-card .project-title {
-  margin-bottom: 8px;
+  grid-area: title;
+  margin: 0;
+}
+
+body.security-page .news-card .project-venue {
+  grid-area: source;
+  margin: 0;
+  text-align: left;
 }
 
 body.security-page .news-read-more {
-  position: absolute;
-  top: 50%;
-  right: 10px;
+  position: static;
+  grid-area: action;
+  align-self: center;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--security-muted);
   font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
   font-size: 10px;
-  transform: translateY(-50%);
 }
 
 body.security-page .motion-item {
@@ -835,7 +848,7 @@ body.security-page .motion-item {
   }
 
   body.security-page .news-card:hover {
-    padding-left: 138px;
+    padding: 26px 18px;
   }
 
   body.security-page .career-context a:hover,
@@ -902,11 +915,13 @@ body.security-page .motion-item {
 
   body.security-page .sidebar-info {
     grid-template-columns: 86px minmax(0, 1fr);
-    gap: 18px;
-    padding-right: 44px;
+    gap: 12px 18px;
+    padding-right: 0;
   }
 
   body.security-page .avatar-box {
+    grid-row: 1 / span 2;
+    align-self: start;
     width: 86px;
     height: 86px;
   }
@@ -921,30 +936,38 @@ body.security-page .motion-item {
   }
 
   body.security-page .info_more-btn {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    bottom: auto;
-    left: auto;
+    position: relative;
+    grid-column: 2;
+    justify-self: start;
     z-index: 2;
-    width: 40px;
-    height: 40px;
-    min-height: 40px;
-    padding: 0;
+    width: auto;
+    height: 36px;
+    min-height: 36px;
+    padding: 0 12px;
     border: 1px solid var(--security-line);
     border-radius: 6px;
     display: flex;
     align-items: center;
     gap: 6px;
     background: rgba(255, 255, 255, 0.025);
+    box-shadow: none;
     color: var(--security-muted);
     font-family: "Inter", "Apple SD Gothic Neo", sans-serif;
-    font-size: 12px;
-    transform: translateY(-50%);
+    font-size: 10px;
+    transform: none;
+    overflow: hidden;
+  }
+
+  body.security-page .info_more-btn::before {
+    display: none;
   }
 
   body.security-page .info_more-btn span {
-    display: none;
+    display: inline;
+  }
+
+  body.security-page .sidebar.active .info_more-btn ion-icon {
+    transform: rotate(180deg);
   }
 
   body.security-page .sidebar-info_more {
@@ -1027,8 +1050,7 @@ body.security-page .motion-item {
     padding: 54px 4px 24px;
   }
 
-  body.security-page .project-badge,
-  body.security-page .news-date {
+  body.security-page .project-badge {
     top: 22px;
     left: 4px;
   }
@@ -1036,15 +1058,23 @@ body.security-page .motion-item {
   body.security-page .news-card,
   body.security-page .news-card:hover {
     min-height: 0;
-    padding: 56px 4px 62px;
+    padding: 24px 4px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "date"
+      "source"
+      "title"
+      "action";
+    gap: 5px;
   }
 
   body.security-page .news-read-more {
-    top: auto;
-    right: auto;
-    bottom: 24px;
-    left: 4px;
-    transform: none;
+    justify-self: start;
+    margin-top: 14px;
+  }
+
+  body.security-page .news-card .project-title {
+    margin-top: 14px;
   }
 }
 
