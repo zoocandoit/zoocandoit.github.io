@@ -29,9 +29,10 @@
 .security-page .text-link { font-size: 14px; }
 .practice-list { margin: 0; }
 .practice-list > div { transition: background-color .2s, border-color .2s; padding: 20px 0 24px; border-top: 1px solid var(--line); }
-.practice-list dt { font-size: 13px; color: var(--accent); }
+.practice-list dt { font-size: 19px; font-weight: 600; color: var(--accent); }
 .practice-list dd { margin: 0; }
-.practice-list dd a { display: inline-flex; align-items: center; min-height: 44px; font-size: 18px; font-weight: 500; color: var(--text); text-decoration-color: var(--line); }
+.practice-organizations { display: flex; flex-wrap: wrap; gap: 0 20px; margin-top: 4px; }
+.practice-list dd a { display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 400; color: var(--text); text-decoration-color: var(--line); }
 .practice-list dd a:hover { text-decoration-color: var(--accent); color: var(--accent); }
 .practice-list dd p { max-width: 62ch; margin-top: 4px; font-size: 15px; line-height: 1.75; color: var(--muted); }
 .credentials { margin-top: 44px; border-top: 3px solid var(--accent); background: #203137; padding: 20px 24px; }
@@ -71,6 +72,5 @@
   .security-page .navbar-link { padding-inline: 3px; }
   .security-page .about-text p:first-child { font-size: 21px; }
   .credentials > section { grid-template-columns: 1fr; gap: 4px; }
-  .practice-list dd a { font-size: 17px; }
   .security-page .career-link { padding-left: 14px; }
 }
