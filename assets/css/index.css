@@ -1,0 +1,48 @@
+/* The two practices form a directory; photographs are their visual signatures. */
+.profile-index-page { --bg: #eee9df; --text: #252923; --muted: #62645b; --accent: #405745; --line: #c8c4b7; }
+.index-main { width: min(920px, calc(100% - 64px)); margin: 40px auto; }
+.index-intro { padding: 24px 0 28px; border-top: 3px solid var(--text); }
+.index-kicker { margin-bottom: 22px; color: var(--muted); font-size: 13px; letter-spacing: .08em; }
+.index-intro h1 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 28px; font-size: 48px; letter-spacing: -.045em; font-weight: 600; }
+.index-intro h1 > span:last-child { font-family: Georgia, serif; font-size: 32px; font-weight: 400; letter-spacing: -.035em; }
+.index-profile-links { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 20px; }
+.index-profile-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); font-size: 14px; }
+.index-routes { border-top: 1px solid var(--text); }
+.profile-route { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 32px; align-items: center; padding: 28px 32px; border-bottom: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.route-copy > * { display: block; }
+.route-label { margin-bottom: 10px; font-size: 13px; color: var(--muted); }
+.route-copy strong { font-size: 38px; font-weight: 550; letter-spacing: -.04em; text-decoration: underline; text-decoration-color: var(--line); text-decoration-thickness: 1px; text-underline-offset: 8px; transition: color .2s, text-decoration-color .2s; }
+.route-conductor strong { font-family: Georgia, serif; font-weight: 400; font-size: 44px; }
+.route-summary { max-width: 48ch; margin-top: 16px; font-size: 15px; line-height: 1.7; color: var(--muted); }
+.route-image { height: 170px; overflow: hidden; background: #202b2a; }
+.route-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2,.65,.2,1); }
+.route-security-image img { object-fit: contain; object-position: center bottom; }
+.route-conductor-image img { object-position: 70% center; }
+.route-security { --text: #f0f3e9; --muted: #b9c8c4; --line: #607671; --accent: #d3ed9e; background: #19342f; }
+.route-conductor { --accent: #763728; --line: #c9b7a2; background: #e4d6be; }
+.route-security-image { background: #29463e; }
+.route-copy { transition: transform .3s ease; }
+.profile-route { transition: background-color .3s; }
+.profile-route:focus-visible { outline-offset: -4px; }
+.profile-route:focus-visible .route-copy { transform: translateX(6px); }
+.profile-route:focus-visible strong { text-decoration-color: var(--accent); }
+@media (hover: hover) {
+  .profile-route:hover .route-copy { transform: translateX(6px); }
+  .route-security:hover { background: #213f38; }
+  .route-conductor:hover { background: #ddc9ab; }
+  .profile-route:hover strong { color: var(--accent); text-decoration-color: var(--accent); }
+  .profile-route:hover img { transform: scale(1.08); }
+}
+@media (min-width: 601px) and (max-width: 800px) {
+  .profile-route { grid-template-columns: minmax(0, 1fr) 180px; padding-inline: 24px; }
+}
+@media (max-width: 600px) {
+  .index-main { width: calc(100% - 40px); margin: 28px auto; }
+  .index-intro h1 { font-size: 34px; gap: 8px 16px; }
+  .index-intro h1 > span:last-child { font-size: 26px; }
+  .profile-route { grid-template-columns: minmax(0, 1fr) 96px; gap: 14px; padding: 24px 16px; }
+  .route-image { height: 108px; }
+  .route-copy strong { font-size: 24px; }
+  .route-conductor strong { font-size: 29px; }
+  .route-summary { font-size: 14px; }
+}

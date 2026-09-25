@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -38,15 +38,17 @@
     }
   </script>
 
-  <link rel="stylesheet" href="./assets/css/style.css?v=20260718-3">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20260925-4">
+  <link rel="stylesheet" href="./assets/css/index.css?v=20260925-4">
 </head>
 
 <body class="profile-hub profile-index-page">
-  <main class="index-main">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="index-main" id="main-content">
     <section class="index-intro" aria-labelledby="profile-name">
-      <p class="index-kicker">Personal index</p>
+      <p class="index-kicker">Professional &amp; musical profiles</p>
       <h1 id="profile-name">
-        <span>노주영</span>
+        <span lang="ko">노주영</span>
         <span lang="en">Jooyoung Roh</span>
       </h1>
       <div class="index-profile-links" aria-label="Profile links">
@@ -58,41 +60,28 @@
 
     <nav class="index-routes" aria-label="Profile sections">
       <a class="profile-route route-security" href="./security/">
-        <span class="route-number" aria-hidden="true">01</span>
         <span class="route-copy">
-          <span class="route-label">Practice</span>
+          <span class="route-label">Experience &amp; research</span>
           <strong>Cyber Security</strong>
           <span class="route-summary">Cloud security, security management, and SecOps.</span>
         </span>
         <span class="route-image route-security-image" aria-hidden="true">
-          <img src="./assets/images/my-avatar.png" alt="">
+          <img src="./assets/images/avatar-320.webp" alt="" width="320" height="394">
         </span>
-        <span class="route-arrow" aria-hidden="true">↗</span>
       </a>
 
       <a class="profile-route route-conductor" href="./conductor/">
-        <span class="route-number" aria-hidden="true">02</span>
         <span class="route-copy">
-          <span class="route-label">Practice</span>
+          <span class="route-label">Biography &amp; performance archive</span>
           <strong>Conducting</strong>
           <span class="route-summary">Orchestral and choral conducting, music, and technology.</span>
         </span>
         <span class="route-image route-conductor-image" aria-hidden="true">
-          <img src="./assets/images/conductor-main.jpg" alt="">
+          <img src="./assets/images/conductor-320.webp" alt="" width="320" height="180">
         </span>
-        <span class="route-arrow" aria-hidden="true">↗</span>
       </a>
     </nav>
   </main>
-
-  <script>
-    if (sessionStorage.getItem("profileTransition") === "home") {
-      sessionStorage.removeItem("profileTransition");
-      document.body.classList.add("page-transition-in");
-      window.setTimeout(() => document.body.classList.remove("page-transition-in"), 400);
-    }
-
-  </script>
 </body>
 
 </html>

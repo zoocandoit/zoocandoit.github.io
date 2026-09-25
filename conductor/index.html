@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -16,27 +16,29 @@
   <meta property="og:url" content="https://zoocandoit.github.io/conductor/">
   <meta property="og:type" content="profile">
 
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260812-1">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260925-4">
+  <link rel="stylesheet" href="./conductor.css?v=20260925-4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body class="conductor-page">
-  <a class="profile-home-link floating-home-link" href="../" aria-label="Back to profile hub">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="profile-home-link floating-home-link" href="../" aria-label="All profiles">
     <span aria-hidden="true">←</span>
-    Back to profile hub
+    All profiles
   </a>
 
-  <main>
-    <aside class="sidebar conductor-sidebar" data-sidebar>
+  <main class="profile-main" id="main-content">
+    <aside class="sidebar conductor-sidebar">
       <div class="sidebar-info">
         <figure class="avatar-box conductor-avatar">
-          <img src="../assets/images/conductor-main.jpg" alt="지휘자 노주영 Jooyoung Roh" width="80">
+          <img src="../assets/images/conductor-320.webp" alt="지휘자 노주영 Jooyoung Roh" width="320" height="180">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="노주영 | Jooyoung Roh">노주영 | Jooyoung Roh</h1>
+          <h1 class="name" title="노주영 | Jooyoung Roh"><span lang="ko">노주영</span> | Jooyoung Roh</h1>
           <p class="title">Conductor</p>
         </div>
       </div>
@@ -51,9 +53,9 @@
             <div class="contact-info">
               <div class="email-copy-row">
                 <p class="contact-title">Email</p>
-                <span class="contact-link email-copy-value">hpjoo718@gmail.com</span>
-                <button class="copy-email-btn" type="button" data-copy="hpjoo718@gmail.com" aria-label="Copy email">
-                  <ion-icon name="copy-outline"></ion-icon>
+                <a class="contact-link email-copy-value" href="mailto:hpjoo718@gmail.com">hpjoo718@gmail.com</a>
+                <button class="copy-email-btn" type="button" hidden data-copy="hpjoo718@gmail.com" aria-label="Copy email">
+                  Copy
                 </button>
               </div>
             </div>
@@ -66,18 +68,18 @@
       <nav class="navbar">
         <ul class="navbar-list">
           <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
+            <a class="navbar-link active" href="#about" data-nav-link data-target="about">About</a>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Filmography</button>
+            <a class="navbar-link" href="#filmography" data-nav-link data-target="filmography">Career</a>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Repository</button>
+            <a class="navbar-link" href="#repository" data-nav-link data-target="repository">Performances</a>
           </li>
         </ul>
       </nav>
 
-      <article class="about active" data-page="about">
+      <article class="about active" id="about" data-page="about">
         <header>
           <h2 class="h2 article-title">About</h2>
         </header>
@@ -104,22 +106,19 @@
         </section>
       </article>
 
-      <article class="filmography" data-page="filmography">
+      <article class="filmography" id="filmography" data-page="filmography">
         <header>
-          <h2 class="h2 article-title">Filmography</h2>
+          <h2 class="h2 article-title">Career</h2>
         </header>
 
         <section class="timeline conductor-timeline conductor-education">
           <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="school-outline"></ion-icon>
-            </div>
             <h3 class="h3">Education</h3>
           </div>
 
           <ol class="timeline-list">
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Seoul National University<br>SNU Conducting Academy Orchestra Course, 3rd Cohort — Certificated</h4>
+              <h4 class="h4 timeline-item-title">Seoul National University<br>SNU Conducting Academy Orchestra Course, 3rd Cohort — Completed</h4>
               <p class="timeline-text">
                 <a class="faculty-link" href="https://classicalnetwork.co.kr/conductor/yunsungjang" target="_blank" rel="noopener noreferrer">장윤성</a> (Lead Professor) / 조상욱
               </p>
@@ -132,9 +131,6 @@
 
         <section class="timeline conductor-timeline">
           <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="musical-notes-outline"></ion-icon>
-            </div>
             <h3 class="h3">Experience</h3>
           </div>
 
@@ -166,9 +162,9 @@
         </section>
       </article>
 
-      <article class="repository" data-page="repository">
+      <article class="repository" id="repository" data-page="repository">
         <header>
-          <h2 class="h2 article-title">Repository</h2>
+          <h2 class="h2 article-title">Performances</h2>
         </header>
 
         <section class="conductor-repository" aria-labelledby="performance-archive-title">
@@ -177,36 +173,28 @@
               <p class="repository-kicker">YouTube Archive</p>
               <h3 class="h3" id="performance-archive-title">Performance Videos</h3>
             </div>
-            <span class="repository-count">09 Videos</span>
+            <span class="repository-count">9 recordings</span>
           </div>
 
-          <a class="youtube-channel-card" href="https://www.youtube.com/@user-harmonyy" target="_blank" rel="noopener noreferrer">
-            <span class="youtube-channel-icon" aria-hidden="true"><ion-icon name="logo-youtube"></ion-icon></span>
-            <span>
-              <small>Official Channel</small>
-              <strong>Harmony Choir on YouTube</strong>
-            </span>
-            <span class="channel-action">Visit Channel <span aria-hidden="true">↗</span></span>
-          </a>
+          <a class="youtube-channel-link" href="https://www.youtube.com/@user-harmonyy" target="_blank" rel="noopener noreferrer">Harmony Choir on YouTube</a>
 
           <div class="repository-year-heading">
             <span>Concert Archive</span>
             <span>Newest first</span>
           </div>
 
-          <div class="video-link-grid">
-            <details class="video-link-card">
+          <div class="video-list">
+            <details class="video-record" name="performances">
               <summary>
-                <span class="video-thumbnail">
+                <span class="video-thumbnail" aria-hidden="true">
+                  <span class="thumbnail-fallback">YouTube</span>
                   <img src="https://i.ytimg.com/vi/B15kLwPsh-M/hqdefault.jpg" alt="" loading="lazy">
-                  <span class="video-card-icon" aria-hidden="true"><ion-icon name="play"></ion-icon></span>
-                  <span class="video-card-index">2026</span>
                 </span>
                 <span class="video-card-copy">
                   <span class="video-card-type">2026 · Graduation Concert</span>
                   <strong>SNU Conducting Academy Orchestra Course Graduation Concert</strong>
                 </span>
-                <span class="video-toggle" aria-hidden="true"><ion-icon name="add-outline"></ion-icon></span>
+                <span class="video-toggle" aria-hidden="true"><span class="icon" aria-hidden="true">+</span></span>
               </summary>
               <div class="video-card-detail">
                 <p>Ⅰ. Pezzo in forma di sonatina · Conductor 노주영</p>
@@ -216,18 +204,17 @@
               </div>
             </details>
 
-            <details class="video-link-card">
+            <details class="video-record" name="performances">
               <summary>
-                <span class="video-thumbnail">
+                <span class="video-thumbnail" aria-hidden="true">
+                  <span class="thumbnail-fallback">YouTube</span>
                   <img src="https://i.ytimg.com/vi/IBc0lQm9tO8/hqdefault.jpg" alt="" loading="lazy">
-                  <span class="video-card-icon" aria-hidden="true"><ion-icon name="play"></ion-icon></span>
-                  <span class="video-card-index">2023</span>
                 </span>
                 <span class="video-card-copy">
                   <span class="video-card-type">2023 · Concert</span>
                   <strong>NewsongJ Orchestra 제5회 정기 연주회</strong>
                 </span>
-                <span class="video-toggle" aria-hidden="true"><ion-icon name="add-outline"></ion-icon></span>
+                <span class="video-toggle" aria-hidden="true"><span class="icon" aria-hidden="true">+</span></span>
               </summary>
               <div class="video-card-detail video-card-detail-program">
                 <div class="video-program-copy">
@@ -253,18 +240,17 @@
               </div>
             </details>
 
-            <details class="video-link-card">
+            <details class="video-record" name="performances">
               <summary>
-                <span class="video-thumbnail">
+                <span class="video-thumbnail" aria-hidden="true">
+                  <span class="thumbnail-fallback">YouTube</span>
                   <img src="https://i.ytimg.com/vi/vAI3tttE5Nw/hqdefault.jpg" alt="" loading="lazy">
-                  <span class="video-card-icon" aria-hidden="true"><ion-icon name="play"></ion-icon></span>
-                  <span class="video-card-index">2018</span>
                 </span>
                 <span class="video-card-copy">
                   <span class="video-card-type">2018 · Concert</span>
                   <strong>NewsongJ Orchestra 제2회 정기 연주회</strong>
                 </span>
-                <span class="video-toggle" aria-hidden="true"><ion-icon name="add-outline"></ion-icon></span>
+                <span class="video-toggle" aria-hidden="true"><span class="icon" aria-hidden="true">+</span></span>
               </summary>
               <div class="video-card-detail video-card-detail-program">
                 <div class="video-program-copy">
@@ -289,21 +275,20 @@
             <span>Newest first</span>
           </div>
 
-          <div class="video-link-grid">
+          <div class="video-list">
 
-            <details class="video-link-card">
+            <details class="video-record" name="performances">
               <summary>
-                <span class="video-thumbnail">
+                <span class="video-thumbnail" aria-hidden="true">
+                  <span class="thumbnail-fallback">YouTube</span>
                   <img src="https://i.ytimg.com/vi/mE4q1IEKchA/hqdefault.jpg" alt="" loading="lazy">
-                  <span class="video-card-icon" aria-hidden="true"><ion-icon name="play"></ion-icon></span>
-                  <span class="video-card-index">2026</span>
                 </span>
                 <span class="video-card-copy">
                   <span class="video-card-type">2026 · Performance</span>
                   <strong>명성교회 46주년 창립기념주일 낮예배 서곡</strong>
                   <span>명성교회 특순 · 주일 낮 예배 5부</span>
                 </span>
-                <span class="video-toggle" aria-hidden="true"><ion-icon name="add-outline"></ion-icon></span>
+                <span class="video-toggle" aria-hidden="true"><span class="icon" aria-hidden="true">+</span></span>
               </summary>
               <div class="video-card-detail">
                 <p>2026. 07. 05. · Starts at 14:28</p>
@@ -313,19 +298,18 @@
               </div>
             </details>
 
-            <details class="video-link-card">
+            <details class="video-record" name="performances">
               <summary>
-                <span class="video-thumbnail">
+                <span class="video-thumbnail" aria-hidden="true">
+                  <span class="thumbnail-fallback">YouTube</span>
                   <img src="https://i.ytimg.com/vi/E7m6wgLUJNs/hqdefault.jpg" alt="" loading="lazy">
-                  <span class="video-card-icon" aria-hidden="true"><ion-icon name="play"></ion-icon></span>
-                  <span class="video-card-index">2026</span>
                 </span>
                 <span class="video-card-copy">
                   <span class="video-card-type">2026 · Performance</span>
                   <strong>사랑하는 자야 일어나 함께 가자 + 주와 같이 길 가는 것</strong>
                   <span>명성교회 특순 · 교회학교 고등부 학생 임원</span>
                 </span>
-                <span class="video-toggle" aria-hidden="true"><ion-icon name="add-outline"></ion-icon></span>
+                <span class="video-toggle" aria-hidden="true"><span class="icon" aria-hidden="true">+</span></span>
               </summary>
               <div class="video-card-detail">
                 <p>2026. 05. 31. · 주일 저녁 예배</p>
@@ -335,19 +319,18 @@
               </div>
             </details>
 
-            <details class="video-link-card">
+            <details class="video-record" name="performances">
               <summary>
-                <span class="video-thumbnail">
+                <span class="video-thumbnail" aria-hidden="true">
+                  <span class="thumbnail-fallback">YouTube</span>
                   <img src="https://i.ytimg.com/vi/ttw4P5-FXZU/hqdefault.jpg" alt="" loading="lazy">
-                  <span class="video-card-icon" aria-hidden="true"><ion-icon name="play"></ion-icon></span>
-                  <span class="video-card-index">2026</span>
                 </span>
                 <span class="video-card-copy">
                   <span class="video-card-type">2026 · Performance</span>
                   <strong>NEWSONG J 청년대학부 특순 · 부활절 칸타타</strong>
                   <span>명성교회 NEWSONG J</span>
                 </span>
-                <span class="video-toggle" aria-hidden="true"><ion-icon name="add-outline"></ion-icon></span>
+                <span class="video-toggle" aria-hidden="true"><span class="icon" aria-hidden="true">+</span></span>
               </summary>
               <div class="video-card-detail video-card-detail-program">
                 <div class="video-program-copy">
@@ -385,19 +368,18 @@
               </div>
             </details>
 
-            <details class="video-link-card">
+            <details class="video-record" name="performances">
               <summary>
-                <span class="video-thumbnail">
+                <span class="video-thumbnail" aria-hidden="true">
+                  <span class="thumbnail-fallback">YouTube</span>
                   <img src="https://i.ytimg.com/vi/yGd5bIdRutY/hqdefault.jpg" alt="" loading="lazy">
-                  <span class="video-card-icon" aria-hidden="true"><ion-icon name="play"></ion-icon></span>
-                  <span class="video-card-index">2025</span>
                 </span>
                 <span class="video-card-copy">
                   <span class="video-card-type">2025 · Performance</span>
                   <strong>더욱 사랑 + 아 하나님의 은혜로</strong>
                   <span>명성교회 특순 · 교회학교 고등부 학생 임원</span>
                 </span>
-                <span class="video-toggle" aria-hidden="true"><ion-icon name="add-outline"></ion-icon></span>
+                <span class="video-toggle" aria-hidden="true"><span class="icon" aria-hidden="true">+</span></span>
               </summary>
               <div class="video-card-detail">
                 <p>2025. 04. 13. · 주일 저녁 예배</p>
@@ -407,19 +389,18 @@
               </div>
             </details>
 
-            <details class="video-link-card">
+            <details class="video-record" name="performances">
               <summary>
-                <span class="video-thumbnail">
+                <span class="video-thumbnail" aria-hidden="true">
+                  <span class="thumbnail-fallback">YouTube</span>
                   <img src="https://i.ytimg.com/vi/k7WTsLZf1Cc/hqdefault.jpg" alt="" loading="lazy">
-                  <span class="video-card-icon" aria-hidden="true"><ion-icon name="play"></ion-icon></span>
-                  <span class="video-card-index">2024</span>
                 </span>
                 <span class="video-card-copy">
                   <span class="video-card-type">2024 · Performance</span>
                   <strong>좋으신 하나님</strong>
                   <span>명성교회 특순 · 교회학교 고등부 학생 임원</span>
                 </span>
-                <span class="video-toggle" aria-hidden="true"><ion-icon name="add-outline"></ion-icon></span>
+                <span class="video-toggle" aria-hidden="true"><span class="icon" aria-hidden="true">+</span></span>
               </summary>
               <div class="video-card-detail">
                 <p>2024. 03. 17. · 주일 저녁 예배</p>
@@ -429,19 +410,18 @@
               </div>
             </details>
 
-            <details class="video-link-card">
+            <details class="video-record" name="performances">
               <summary>
-                <span class="video-thumbnail">
+                <span class="video-thumbnail" aria-hidden="true">
+                  <span class="thumbnail-fallback">YouTube</span>
                   <img src="https://i.ytimg.com/vi/mf0whcw1i-w/hqdefault.jpg" alt="" loading="lazy">
-                  <span class="video-card-icon" aria-hidden="true"><ion-icon name="play"></ion-icon></span>
-                  <span class="video-card-index">2022</span>
                 </span>
                 <span class="video-card-copy">
                   <span class="video-card-type">2022 · Performance</span>
                   <strong>성탄찬송메들리</strong>
                   <span>명성교회 특순 · 중·고등학교</span>
                 </span>
-                <span class="video-toggle" aria-hidden="true"><ion-icon name="add-outline"></ion-icon></span>
+                <span class="video-toggle" aria-hidden="true"><span class="icon" aria-hidden="true">+</span></span>
               </summary>
               <div class="video-card-detail">
                 <p>2022. 12. 25. · 주일 1부 예배</p>
@@ -456,9 +436,7 @@
     </div>
   </main>
 
-  <script src="../assets/js/script.js?v=20260718-3"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="../assets/js/script.js?v=20260925-4"></script>
 </body>
 
 </html>
