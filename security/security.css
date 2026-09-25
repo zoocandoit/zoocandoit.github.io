@@ -8,13 +8,14 @@
   --muted: #b2bebc;
   --line: #3d5055;
   --accent: #d2e9a0;
+  background-image: url("../assets/images/security-grid.svg");
 }
-.security-page .sidebar { padding: 24px 0 32px; border: 0; }
-.security-page .avatar-box, .security-page .avatar-box img { width: 112px; height: 138px; }
+.security-page .sidebar { padding: 16px 0 32px; border: 0; }
+.security-page .avatar-box, .security-page .avatar-box img { width: 136px; height: 168px; }
 .security-page .avatar-box img { object-fit: contain; border-radius: 0; background: var(--surface-alt); border-bottom: 3px solid var(--accent); }
 .security-page .info-content .title { color: var(--accent); letter-spacing: .06em; font-size: 15px; }
-.security-page .info-content .name { font-size: clamp(20px, 2.5vw, 32px); }
-.security-page .main-content { padding: 0 36px 16px; background: var(--surface); border-top: 2px solid var(--accent); }
+.security-page .info-content .name { font-size: clamp(20px, 2.8vw, 36px); }
+.security-page .main-content { padding: 0 36px 16px; background: var(--surface); border-top: 2px solid var(--accent); box-shadow: 0 12px 36px #00000016; }
 .security-page .navbar { margin-inline: -36px; padding-inline: 36px; margin-bottom: 32px; }
 .security-page .navbar-list { gap: 12px; }
 .security-page .navbar-link { padding-inline: 18px; }
@@ -45,15 +46,21 @@
 .security-page .resume .timeline-list { list-style: none; border: 0; padding: 0; }
 .security-page .resume .timeline-item { padding: 24px 0; border-top: 1px solid var(--line); }
 .security-page .resume .timeline-item::before { display: none; }
-.security-page .career-link { padding-left: 20px; border-left: 2px solid var(--line); transition: border-color .18s; }
+.security-page .career-link { padding-left: 20px; border-left: 2px solid var(--line); transition: border-color .2s, background-color .2s, transform .2s; }
 .security-page .career-link:hover, .security-page .career-link:focus-visible { border-left-color: var(--accent); }
 .security-page .project-content { padding-block: 28px; }
 .security-page .project-badge { color: var(--accent); letter-spacing: .025em; }
+.security-page .career-period, .security-page .project-badge, .security-page .news-date { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 13px; font-variant-numeric: tabular-nums; }
+.security-page .news-card { padding-inline: 16px; border-left: 2px solid transparent; }
+.security-page .news-card:hover, .security-page .news-card:focus-visible { border-left-color: var(--accent); }
 .practice-list > div:focus-within { border-top-color: var(--accent); background: var(--surface-alt); }
 @media (hover: hover) {
   .practice-list > div:hover { border-top-color: var(--accent); background: var(--surface-alt); }
 }
 @media (min-width: 901px) {
+  .security-page .career-link { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 24px; padding-block: 4px; }
+  .security-page .career-link > * { grid-column: 1; }
+  .security-page .career-period { grid-column: 2; grid-row: 1 / span 2; align-self: center; white-space: nowrap; }
   .security-page .publications .project-content { display: grid; grid-template-columns: 130px minmax(0, 1fr); column-gap: 24px; }
   .security-page .publications .project-content > * { grid-column: 2; }
   .security-page .publications .project-badge { grid-column: 1; grid-row: 1 / span 4; padding-top: 3px; }
@@ -65,7 +72,7 @@
 }
 @media (max-width: 600px) {
   .security-page .sidebar { padding: 8px 0 24px; }
-  .security-page .avatar-box, .security-page .avatar-box img { width: 64px; height: 80px; }
+  .security-page .avatar-box, .security-page .avatar-box img { width: 80px; height: 100px; }
   .security-page .main-content { padding: 0 20px 8px; }
   .security-page .navbar { margin-inline: -20px; padding-inline: 16px; margin-bottom: 24px; }
   .security-page .navbar-list { gap: 0; }
@@ -74,3 +81,5 @@
   .credentials > section { grid-template-columns: 1fr; gap: 4px; }
   .security-page .career-link { padding-left: 14px; }
 }
+
+@media print { .security-page { background-image: none; } }
