@@ -31,6 +31,12 @@
 .project-intro, .project-writeup { color: var(--muted); word-break: keep-all; overflow-wrap: anywhere; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding: 0; list-style: none; }
 .project-tags li { padding: 4px 8px; border: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.career-project[id] { scroll-margin-top: 80px; }
+.project-figure { margin-top: 24px; }
+.project-figure a { display: block; border: 1px solid var(--line); }
+.project-figure a:hover { border-color: var(--accent); }
+.project-figure img { width: 100%; }
+.project-figure figcaption { margin-top: 10px; color: var(--muted); font-size: 13px; line-height: 1.65; overflow-wrap: anywhere; }
 .project-details { margin-top: 24px; border-top: 1px solid var(--line); }
 .project-details summary { min-height: 44px; padding-block: 16px; color: var(--accent); cursor: pointer; }
 .project-details summary:hover { text-decoration: underline; text-underline-offset: .2em; }
@@ -39,6 +45,7 @@
 .project-writeup h4 { margin-bottom: 12px; color: var(--text); }
 .project-writeup p + p { margin-top: 12px; }
 .project-implementation { margin: 0; }
+.project-writeup p + .project-implementation { margin-top: 16px; }
 .project-implementation > div + div { margin-top: 20px; }
 .project-implementation dt, .project-principles strong { font-weight: 600; color: var(--text); }
 .project-implementation dd { margin: 6px 0 0; }

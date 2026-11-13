@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">그룹웨어 보안성검토 이력의 수집과 지식기반 반영</title>
+  <desc id="desc">사용자가 로그인한 뒤 Python과 Playwright로 문서를 수집하고 파일 무결성과 수집 이력을 확인한다. 텍스트 변환 자료를 담당자가 확인해 SharePoint에 반영하고 에이전트 검색 여부를 별도로 확인한다. 실제 개발 문서를 바탕으로 재구성한 공개용 설명도이다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 10 5 0 10" fill="none" stroke="#087d88" stroke-width="2"/></marker>
+  </defs>
+  <rect width="1200" height="800" fill="#f3f6fa"/>
+  <rect width="1200" height="130" fill="#192b40"/>
+  <g font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="48" y="58" font-size="34" font-weight="700" fill="#fff">보안성검토 이력을 검색 가능한 자료로</text>
+    <text x="48" y="99" font-size="21" fill="#c4d5e6">수집 프로그램과 자료 반영 절차를 바탕으로 재구성한 공개용 설명도</text>
+    <text x="48" y="184" font-size="22" fill="#087d88" font-weight="700">수집 프로그램</text>
+    <g fill="#fff" stroke="#cbd8e5" stroke-width="2">
+      <rect x="48" y="210" width="336" height="150" rx="8"/>
+      <rect x="432" y="210" width="336" height="150" rx="8"/>
+      <rect x="816" y="210" width="336" height="150" rx="8"/>
+      <rect x="48" y="502" width="336" height="150" rx="8"/>
+      <rect x="816" y="502" width="336" height="150" rx="8"/>
+    </g>
+    <rect x="432" y="502" width="336" height="150" rx="8" fill="#eaf4f5" stroke="#087d88" stroke-width="2"/>
+    <g font-size="24" font-weight="700" fill="#20354b">
+      <text x="72" y="252">01  권한 내 문서 조회</text>
+      <text x="456" y="252">02  본문·식별정보 수집</text>
+      <text x="840" y="252">03  저장·무결성 확인</text>
+      <text x="72" y="544">04  검색용 텍스트 변환</text>
+      <text x="456" y="544">05  담당자 확인·반영</text>
+      <text x="840" y="544">06  에이전트 검색</text>
+    </g>
+    <g font-size="21" fill="#52677d">
+      <text x="72" y="294">사용자가 직접 로그인</text>
+      <text x="72" y="326">문서 목록·수집 대상 확인</text>
+      <text x="456" y="294">Python · Playwright</text>
+      <text x="456" y="326">중복 방지 · 실패 재처리</text>
+      <text x="840" y="294">본문·이미지 해시 확인</text>
+      <text x="840" y="326">SQLite 수집 이력 관리</text>
+      <text x="72" y="586">수집한 본문을 텍스트로 정리</text>
+      <text x="72" y="618">출처와 문서 식별정보 보존</text>
+      <text x="456" y="586">자료 확인 후 SharePoint 반영</text>
+      <text x="456" y="618">문서 저장소에서 별도 관리</text>
+      <text x="840" y="586">연결된 지식 소스로 조회</text>
+      <text x="840" y="618">검색·본문 확인 여부 점검</text>
+    </g>
+    <g fill="none" stroke="#087d88" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M386 285H423"/><path d="M770 285H807"/>
+      <path d="M984 362V412H216V493"/>
+      <path d="M386 577H423"/><path d="M770 577H807"/>
+    </g>
+    <text x="432" y="466" font-size="22" fill="#087d88" font-weight="700">검색 자료 반영</text>
+    <path d="M48 702H1152" stroke="#cbd8e5"/>
+    <text x="48" y="744" font-size="23" font-weight="700" fill="#20354b">수집 성공 · 업로드 완료 · 에이전트 검색 가능 여부를 각각 확인</text>
+    <text x="48" y="777" font-size="19" fill="#52677d">자료 수집 이후 저장소 반영과 검색 확인까지 별도의 단계로 관리</text>
+  </g>
+</svg>

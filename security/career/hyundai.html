@@ -11,7 +11,7 @@
   <!-- custom css link -->
   <link rel="stylesheet" href="../../assets/css/style.css?v=20260925-8">
   <link rel="stylesheet" href="../security.css?v=20260925-8">
-  <link rel="stylesheet" href="../../assets/css/detail.css?v=20261111-2">
+  <link rel="stylesheet" href="../../assets/css/detail.css?v=20261114-1">
 </head>
 
 <body class="detail-page security-page">
@@ -121,15 +121,39 @@
                   <dl class="project-implementation">
                     <div>
                       <dt>사내 Confluence 연동과 다중 문서 조회</dt>
-                      <dd>온프레미스 데이터 게이트웨이와 사용자 지정 커넥터로 사내망의 Confluence를 Copilot Studio에 연결했습니다. REST API를 이용한 문서 검색과 본문 조회를 별도 도구로 구성하고, Power Automate에서 여러 문서를 순차 조회한 결과를 모아 에이전트에 반환하도록 구현했습니다.</dd>
+                      <dd>
+                        <p>온프레미스 데이터 게이트웨이와 사용자 지정 커넥터로 사내망의 Confluence를 Copilot Studio에 연결했습니다. REST API를 이용한 문서 검색과 본문 조회를 별도 도구로 구성하고, Power Automate에서 여러 문서를 순차 조회한 결과를 모아 에이전트에 반환하도록 구현했습니다.</p>
+                        <figure class="project-figure">
+                          <a href="../../assets/images/hyundai/confluence-workflow.svg" target="_blank" rel="noopener noreferrer" aria-label="Confluence 다중 문서 조회 흐름도 원본 크기로 보기 (새 탭)">
+                            <img src="../../assets/images/hyundai/confluence-workflow.svg" width="1200" height="900" loading="lazy" decoding="async" alt="에이전트가 문서 ID 목록을 전달하면 Power Automate가 각 본문을 순차 조회하고 결과를 모아 반환하는 흐름">
+                          </a>
+                          <figcaption>실제 Power Automate 워크플로를 바탕으로 재구성한 공개용 설명도. 문서별 본문 조회와 결과 취합 과정을 보여줍니다. 이미지를 선택하면 원본 크기로 볼 수 있습니다.</figcaption>
+                        </figure>
+                      </dd>
                     </div>
                     <div>
                       <dt>사내 기준과 과거 검토 이력 연결</dt>
-                      <dd>SharePoint의 규정·지침·매뉴얼과 과거 보안성검토 이력을 지식 소스로 구성했습니다. 검토 목적, 시스템 구조, 처리 데이터, 위험과 조치사항을 기준으로 유사 사례를 찾도록 했습니다. 현재 요청자료와 현행 기준을 우선하고, 과거 승인이나 예외는 참고자료로 구분했습니다. 법적 근거 확인을 보조하는 법령 조회 MCP도 연결했습니다.</dd>
+                      <dd>
+                        <p>SharePoint의 규정·지침·매뉴얼과 과거 보안성검토 이력을 지식 소스로 구성했습니다. 검토 목적, 시스템 구조, 처리 데이터, 위험과 조치사항을 기준으로 유사 사례를 찾도록 했습니다. 현재 요청자료와 현행 기준을 우선하고, 과거 승인이나 예외는 참고자료로 구분했습니다. 법적 근거 확인을 보조하는 법령 조회 MCP도 연결했습니다.</p>
+                        <figure class="project-figure">
+                          <a href="../../assets/images/hyundai/legal-reference-flow.png" target="_blank" rel="noopener noreferrer" aria-label="국가법령 조회 MCP 연동 개념도 원본 크기로 보기 (새 탭)">
+                            <img src="../../assets/images/hyundai/legal-reference-flow.png" width="1054" height="344" loading="lazy" decoding="async" alt="국가법령 조회 MCP를 통한 법령·행정규칙 검색 결과를 Copilot Studio 에이전트에 연결하는 개념도">
+                          </a>
+                          <figcaption>프로젝트 문서에 정리한 법령 조회 MCP 연동 개념도. 조회한 근거는 검토 초안에 활용하고, 최종 해석과 판단은 담당자가 수행하도록 했습니다.</figcaption>
+                        </figure>
+                      </dd>
                     </div>
                     <div>
                       <dt>그룹웨어 문서 수집 자동화</dt>
-                      <dd>Python과 Playwright로 그룹웨어 상세 화면의 본문과 문서 식별정보를 수집하는 프로그램을 개발했습니다. 중복 수집 방지, 실패 재처리, 중단 후 재실행, 파일 무결성 확인을 구현·검증했습니다. 수집한 자료는 검색용 텍스트로 변환한 뒤 담당자가 문서 저장소에 반영하도록 했으며, 수집 성공·업로드 완료·에이전트 검색 가능 여부를 각각 확인하도록 절차를 정리했습니다.</dd>
+                      <dd>
+                        <p>Python과 Playwright로 그룹웨어 상세 화면의 본문과 문서 식별정보를 수집하는 프로그램을 개발했습니다. 중복 수집 방지, 실패 재처리, 중단 후 재실행, 파일 무결성 확인을 구현·검증했습니다. 수집한 자료는 검색용 텍스트로 변환한 뒤 담당자가 문서 저장소에 반영하도록 했으며, 수집 성공·업로드 완료·에이전트 검색 가능 여부를 각각 확인하도록 절차를 정리했습니다.</p>
+                        <figure class="project-figure">
+                          <a href="../../assets/images/hyundai/review-knowledge-flow.svg" target="_blank" rel="noopener noreferrer" aria-label="보안성검토 이력 수집과 지식기반 반영 흐름도 원본 크기로 보기 (새 탭)">
+                            <img src="../../assets/images/hyundai/review-knowledge-flow.svg" width="1200" height="800" loading="lazy" decoding="async" alt="그룹웨어 문서를 수집·검증하고 검색용 텍스트로 변환한 뒤 담당자가 SharePoint에 반영하고 에이전트 검색을 확인하는 과정">
+                          </a>
+                          <figcaption>수집 프로그램 개발 문서와 지식기반 연동 구성을 바탕으로 재구성한 공개용 설명도. 문서 수집부터 담당자의 저장소 반영, 검색 확인까지의 단계를 정리했습니다.</figcaption>
+                        </figure>
+                      </dd>
                     </div>
                   </dl>
                 </section>
